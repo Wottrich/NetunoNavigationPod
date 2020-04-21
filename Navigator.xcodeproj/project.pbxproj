@@ -14,7 +14,19 @@
 		ABB7F70C244F69CE00C22383 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABB7F70A244F69CE00C22383 /* Main.storyboard */; };
 		ABB7F70E244F69D000C22383 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABB7F70D244F69D000C22383 /* Assets.xcassets */; };
 		ABB7F711244F69D000C22383 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABB7F70F244F69D000C22383 /* LaunchScreen.storyboard */; };
+		ABB7F71D244F70E500C22383 /* NavigatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB7F71C244F70E500C22383 /* NavigatorTests.swift */; };
+		ABB7F71F244F70E500C22383 /* Navigator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB7F6F3244F68E700C22383 /* Navigator.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ABB7F720244F70E500C22383 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ABB7F6EA244F68E700C22383 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ABB7F6F2244F68E700C22383;
+			remoteInfo = Navigator;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		ABB7F6F3244F68E700C22383 /* Navigator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Navigator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,6 +40,9 @@
 		ABB7F70D244F69D000C22383 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABB7F710244F69D000C22383 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABB7F712244F69D000C22383 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABB7F71A244F70E500C22383 /* NavigatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavigatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABB7F71C244F70E500C22383 /* NavigatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorTests.swift; sourceTree = "<group>"; };
+		ABB7F71E244F70E500C22383 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +60,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ABB7F717244F70E500C22383 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABB7F71F244F70E500C22383 /* Navigator.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -53,6 +76,7 @@
 			children = (
 				ABB7F6F5244F68E700C22383 /* Navigator */,
 				ABB7F703244F69CE00C22383 /* NavigatorExample */,
+				ABB7F71B244F70E500C22383 /* NavigatorTests */,
 				ABB7F6F4244F68E700C22383 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,6 +86,7 @@
 			children = (
 				ABB7F6F3244F68E700C22383 /* Navigator.framework */,
 				ABB7F702244F69CE00C22383 /* NavigatorExample.app */,
+				ABB7F71A244F70E500C22383 /* NavigatorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,6 +112,15 @@
 				ABB7F712244F69D000C22383 /* Info.plist */,
 			);
 			path = NavigatorExample;
+			sourceTree = "<group>";
+		};
+		ABB7F71B244F70E500C22383 /* NavigatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				ABB7F71C244F70E500C22383 /* NavigatorTests.swift */,
+				ABB7F71E244F70E500C22383 /* Info.plist */,
+			);
+			path = NavigatorTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +172,24 @@
 			productReference = ABB7F702244F69CE00C22383 /* NavigatorExample.app */;
 			productType = "com.apple.product-type.application";
 		};
+		ABB7F719244F70E500C22383 /* NavigatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABB7F722244F70E500C22383 /* Build configuration list for PBXNativeTarget "NavigatorTests" */;
+			buildPhases = (
+				ABB7F716244F70E500C22383 /* Sources */,
+				ABB7F717244F70E500C22383 /* Frameworks */,
+				ABB7F718244F70E500C22383 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ABB7F721244F70E500C22383 /* PBXTargetDependency */,
+			);
+			name = NavigatorTests;
+			productName = NavigatorTests;
+			productReference = ABB7F71A244F70E500C22383 /* NavigatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -152,6 +204,9 @@
 						CreatedOnToolsVersion = 11.3.1;
 					};
 					ABB7F701244F69CE00C22383 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					ABB7F719244F70E500C22383 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
 				};
@@ -171,6 +226,7 @@
 			targets = (
 				ABB7F6F2244F68E700C22383 /* Navigator */,
 				ABB7F701244F69CE00C22383 /* NavigatorExample */,
+				ABB7F719244F70E500C22383 /* NavigatorTests */,
 			);
 		};
 /* End PBXProject section */
@@ -190,6 +246,13 @@
 				ABB7F711244F69D000C22383 /* LaunchScreen.storyboard in Resources */,
 				ABB7F70E244F69D000C22383 /* Assets.xcassets in Resources */,
 				ABB7F70C244F69CE00C22383 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABB7F718244F70E500C22383 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,7 +276,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ABB7F716244F70E500C22383 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABB7F71D244F70E500C22383 /* NavigatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ABB7F721244F70E500C22383 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ABB7F6F2244F68E700C22383 /* Navigator */;
+			targetProxy = ABB7F720244F70E500C22383 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		ABB7F70A244F69CE00C22383 /* Main.storyboard */ = {
@@ -435,6 +514,40 @@
 			};
 			name = Release;
 		};
+		ABB7F723244F70E500C22383 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NavigatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = github.io.wottrich.NavigatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ABB7F724244F70E500C22383 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NavigatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = github.io.wottrich.NavigatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -461,6 +574,15 @@
 			buildConfigurations = (
 				ABB7F714244F69D000C22383 /* Debug */,
 				ABB7F715244F69D000C22383 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABB7F722244F70E500C22383 /* Build configuration list for PBXNativeTarget "NavigatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABB7F723244F70E500C22383 /* Debug */,
+				ABB7F724244F70E500C22383 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
