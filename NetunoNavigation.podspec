@@ -6,7 +6,7 @@ Pod::Spec.new do |spec|
 
 
   spec.name         = "NetunoNavigation"
-  spec.version      = "0.0.3"
+  spec.version      = "0.0.4"
   spec.summary      = "Navigate as a God"
 
   # ―――  Description  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -46,7 +46,7 @@ A POD to make easily how to navigate on iOS
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
 #  spec.source           = { :path => '.' }
-  spec.source_files  = "NetunoNavigation/**/*.{h,m, swift}"
+  spec.source_files  = "NetunoNavigation/**/*.{h,m,swift}"
   spec.exclude_files = "NetunoNavigation/Exclude"
 
 end
