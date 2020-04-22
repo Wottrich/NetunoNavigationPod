@@ -5,7 +5,7 @@ Pod::Spec.new do |spec|
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
 
-  spec.name         = "Navigator"
+  spec.name         = "NetunoNavigation"
   spec.version      = "0.0.1"
   spec.summary      = "Navigate as a God"
 
@@ -17,7 +17,7 @@ A POD to make easily how to navigate on iOS
 
   # ―――  HomePage  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
-  spec.homepage     = "https://github.com/Wottrich/navigator"
+  spec.homepage     = "https://github.com/Wottrich/NetunoNavigationPod"
 
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -40,7 +40,7 @@ A POD to make easily how to navigate on iOS
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
-  spec.source       = { :git => "https://github.com/Wottrich/navigator.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/Wottrich/NetunoNavigationPod.git", :tag => "#{spec.version}" }
   
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

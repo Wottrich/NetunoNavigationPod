@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Navigator.xcodeproj">
+      location = "self:/Users/wottrich/Desktop/Gits/iOS/pod/Navigator/NetunoNavigation.xcodeproj">
    </FileRef>
 </Workspace>
