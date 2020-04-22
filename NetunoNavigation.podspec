@@ -6,7 +6,7 @@ Pod::Spec.new do |spec|
 
 
   spec.name         = "NetunoNavigation"
-  spec.version      = "0.0.2"
+  spec.version      = "0.0.3"
   spec.summary      = "Navigate as a God"
 
   # ―――  Description  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
