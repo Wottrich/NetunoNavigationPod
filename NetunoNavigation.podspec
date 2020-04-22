@@ -46,7 +46,7 @@ A POD to make easily how to navigate on iOS
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
 #  spec.source           = { :path => '.' }
-  spec.source_files  = "Navigator/**/*.{h,m, swift}"
-  spec.exclude_files = "Navigator/Exclude"
+  spec.source_files  = "NetunoNavigation/**/*.{h,m, swift}"
+  spec.exclude_files = "NetunoNavigation/Exclude"
 
 end
