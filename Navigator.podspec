@@ -34,7 +34,7 @@ A POD to make easily how to navigate on iOS
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   
 
-  spec.ios.deployment_target = "13.2"
+  spec.ios.deployment_target = "12.2"
   spec.swift_version = "5.0"
 
 
@@ -45,6 +45,7 @@ A POD to make easily how to navigate on iOS
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
+#  spec.source           = { :path => '.' }
   spec.source_files  = "Navigator/**/*.{h,m, swift}"
   spec.exclude_files = "Navigator/Exclude"
 
