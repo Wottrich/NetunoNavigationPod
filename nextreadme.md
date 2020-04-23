@@ -41,7 +41,7 @@ Now that you have `Navigator` initialised you can use all it's navigation functi
 
 ---
 ### navigate.toGo(...)
-This method is used when you don't need to send data to next `UIViewController`.
+Function used when you don't need to send data to next `UIViewController`.
 
 The function explained is:
 ```swift
