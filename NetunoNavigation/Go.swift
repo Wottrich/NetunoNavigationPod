@@ -13,7 +13,7 @@ import UIKit
  */
 public class Go {
     
-    static var defaultAnimated: Bool = true 
+    public static var defaultAnimated: Bool = true
     
     /**
      `navigationController` used to open a new ViewController
@@ -43,7 +43,7 @@ public class Go {
         - completion: When processing to initialize screen is completed, this function is called
      */
     /// - Tag: GoClass
-    public func go(segue: Segue = .push)  {
+    public func go(segue: Segue = .push(animated: Go.defaultAnimated))  {
         
         guard let viewController = self.viewController, let nav = self.navigationController else {
             return
