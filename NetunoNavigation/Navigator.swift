@@ -65,9 +65,7 @@ public class Navigator {
     public func toGo<T: UIViewController> (
         _ actualViewController: UIViewController,
         _ viewControllerToGo: T.Type,
-        segue: Segue = .push,
-        animated: Bool = true,
-        _ completion: (() -> Void)? = nil
+        segue: Segue = .push(animated: Go.defaultAnimated)
     ) {
         
         viewController = T.storyboardInstance(actualViewController: actualViewController) as? T
@@ -75,16 +73,14 @@ public class Navigator {
         Go(
             self.navigationController,
             viewController
-        ).go(segue: segue, animated: animated, completion: completion)
+        ).go(segue: segue)
         
     }
     
     public func toGo<T: UIViewController> (
         _ storyboardToGo: String,
         _ viewControllerToGo: T.Type,
-        segue: Segue = .push,
-        animated: Bool = true,
-        _ completion: (() -> Void)? = nil
+        segue: Segue = .push(animated: Go.defaultAnimated)
     ) {
         
         viewController = T.storyboardInstance(storyboardName: storyboardToGo) as? T
@@ -92,7 +88,7 @@ public class Navigator {
         Go(
             self.navigationController,
             viewController
-        ).go(segue: segue, animated: animated, completion: completion)
+        ).go(segue: segue)
         
     }
     

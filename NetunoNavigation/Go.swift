@@ -13,6 +13,8 @@ import UIKit
  */
 public class Go {
     
+    public static var defaultAnimated: Bool = true
+    
     /**
      `navigationController` used to open a new ViewController
      */
@@ -41,7 +43,7 @@ public class Go {
         - completion: When processing to initialize screen is completed, this function is called
      */
     /// - Tag: GoClass
-    public func go(segue: Segue = .push, animated: Bool = true, completion: (() -> Void)? = nil)  {
+    public func go(segue: Segue = .push(animated: Go.defaultAnimated))  {
         
         guard let viewController = self.viewController, let nav = self.navigationController else {
             return
@@ -52,7 +54,7 @@ public class Go {
             nav.show(viewController, sender: sender)
         case let .showDetail(sender):
             nav.showDetailViewController(viewController, sender: sender)
-        case let .presentModally(removeBackground, transitionStyle):
+        case let .presentModally(removeBackground, transitionStyle, animated, completion):
             if removeBackground {
                 viewController.modalPresentationStyle = .overCurrentContext
             } else {
@@ -60,17 +62,17 @@ public class Go {
             }
             
             viewController.modalTransitionStyle = transitionStyle
-            nav.present(viewController, animated: animated, completion: completion)
-        case .presentAsPopover:
+            nav.present(viewController, animated: animated ?? true, completion: completion)
+        case let .presentAsPopover(animated, completion):
             nav.modalPresentationStyle = .popover
-            nav.present(viewController, animated: animated, completion: completion)
+            nav.present(viewController, animated: animated ?? true, completion: completion)
         case .root:
             self.setAsRootViewController(viewController)
-        case .push:
-            nav.pushViewController(viewController, animated: animated)
-        case let .modal(modalPresentationStyle):
+        case let .push(animated):
+            nav.pushViewController(viewController, animated: animated ?? true)
+        case let .modal(modalPresentationStyle, animated, completion):
             viewController.modalPresentationStyle = modalPresentationStyle
-            nav.present(viewController, animated: animated, completion: completion)
+            nav.present(viewController, animated: animated ?? true, completion: completion)
         }
         
     }
