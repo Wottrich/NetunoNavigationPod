@@ -39,7 +39,7 @@ public class Stack {
         
             return stackGo
         } else {
-            viewController = T.storyboardInstance(actualViewController: self.navigationController) as? T
+            viewController = T.storyboardInstance(currentViewController: self.navigationController) as? T
             prepare?(viewController as? T)
             
             if let viewController = self.viewController {
@@ -59,18 +59,18 @@ public class Stack {
         completion: (() -> Void)? = nil
     ) {
         if viewControllerToGo == nil {
-            stackGo.go(animated: animated, completion: completion)
+            stackGo.go(animated: animated, completion)
         } else if let firstViewController = self.navigationController.viewControllers.first, firstViewController is T {
-            stackGo.go(animated: animated, completion: completion)
+            stackGo.go(animated: animated, completion)
         } else {
-            viewController = T.storyboardInstance(actualViewController: self.navigationController) as? T
+            viewController = T.storyboardInstance(currentViewController: self.navigationController) as? T
             
             if let viewController = self.viewController {
                 self.navigationController.viewControllers.removeAll()
                 self.navigationController.viewControllers.append(viewController)
             }
             
-            stackGo.go(modalPresentationStyle: modalPresentationStyle,animated: animated, completion: completion)
+            stackGo.go(modalPresentationStyle: modalPresentationStyle,animated: animated, completion)
             
         }
         
@@ -94,7 +94,7 @@ public class StackGo {
     public func go (
         modalPresentationStyle: UIModalPresentationStyle = .fullScreen,
         animated: Bool = true,
-        completion: (() -> Void)? = nil
+        _ completion: (() -> Void)? = nil
     ) {
         
         self.navigationController.modalPresentationStyle = modalPresentationStyle

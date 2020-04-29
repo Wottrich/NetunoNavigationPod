@@ -36,12 +36,12 @@ public class Navigator {
     
     // MARK: - to()
     public func to<T: UIViewController> (
-        _ actualViewController: UIViewController,
+        _ currentViewController: UIViewController,
         viewControllerToGo: T.Type,
         prepare: ((T?) -> Void)? = nil
     ) -> Go {
         
-        viewController = T.storyboardInstance(actualViewController: actualViewController) as? T
+        viewController = T.storyboardInstance(currentViewController: currentViewController) as? T
         prepare?(viewController as? T)
         
         return Go(self.navigationController, viewController)
@@ -63,12 +63,12 @@ public class Navigator {
     
     // MARK: - toGo()
     public func toGo<T: UIViewController> (
-        _ actualViewController: UIViewController,
-        _ viewControllerToGo: T.Type,
+        _ currentViewController: UIViewController,
+        viewControllerToGo: T.Type,
         segue: Segue = .push(animated: Go.defaultAnimated)
     ) {
         
-        viewController = T.storyboardInstance(actualViewController: actualViewController) as? T
+        viewController = T.storyboardInstance(currentViewController: currentViewController) as? T
         
         Go(
             self.navigationController,
@@ -79,7 +79,7 @@ public class Navigator {
     
     public func toGo<T: UIViewController> (
         _ storyboardToGo: String,
-        _ viewControllerToGo: T.Type,
+        viewControllerToGo: T.Type,
         segue: Segue = .push(animated: Go.defaultAnimated)
     ) {
         
@@ -130,7 +130,7 @@ public class Navigator {
         viewControllerToGo: T.Type? = nil,
         modalPresentationStyle: UIModalPresentationStyle = .fullScreen,
         animated: Bool = false,
-        completion: (() -> Void)? = nil
+        _ completion: (() -> Void)? = nil
     ) {
         
         if let storyboardName = storyboardToGo {
@@ -211,8 +211,8 @@ extension UIViewController {
         return storyboard.instantiateViewController(withIdentifier: identifier)
     }
     
-    public class func storyboardInstance(actualViewController: UIViewController) -> UIViewController? {
-        return actualViewController.storyboard?.instantiateViewController(withIdentifier: identifier)
+    public class func storyboardInstance(currentViewController: UIViewController) -> UIViewController? {
+        return currentViewController.storyboard?.instantiateViewController(withIdentifier: identifier)
     }
     
     class func instantiate(identifier: String, storyboard: String) -> UIViewController {
