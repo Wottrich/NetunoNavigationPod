@@ -19,11 +19,11 @@ import UIKit
 public enum Segue {
     case show(sender: Any?)
     case showDetail(sender: Any?)
-    case presentModally(removeBackground: Bool, transitionStyle: UIModalTransitionStyle)
-    case presentAsPopover
+    case presentModally(removeBackground: Bool, transitionStyle: UIModalTransitionStyle, animated: Bool?, completion: (() -> Void)?)
+    case presentAsPopover(animated: Bool?, completion: (() -> Void)?)
     case root
     //deprecated in iOS
-    case push
-    case modal(modalPresentationStyle: UIModalPresentationStyle)
+    case push(animated: Bool?)
+    case modal(modalPresentationStyle: UIModalPresentationStyle, animated: Bool?, completion: (() -> Void)?)
 }
 
