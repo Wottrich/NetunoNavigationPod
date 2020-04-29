@@ -8,7 +8,7 @@ Navigate as a Godness.
 You can install NetunoNavigation with [CocoaPods](http://cocoapods.org/).
 
 ```ruby
-pod 'NetunoNavigation', '~> 0.0.6'
+pod 'NetunoNavigation', '~> 0.0.5'
 ```
 ##  Implementing
 After you install NetunoNavigation with CocoaPods you can to import `NetunoNavigation` into your class:
@@ -39,8 +39,9 @@ Now that you have `Navigator` initialised you can use all it's navigation functi
 # All functions you need to know
 
 ##  Navigate
+###### _To see documentation. Click at →_
 ### > .to / .go
-→ Navigate to a UIViewController that is on current storyboard with data:
+[→]() Navigate to a UIViewController that is on current storyboard with data:
 ```swift
 navigate.to(
 	_ currentViewController: self,
@@ -49,7 +50,7 @@ navigate.to(
 )
 ```
 
-→ Navigate to a UIViewController that is on another storyboard with data:
+[→]() Navigate to a UIViewController that is on another storyboard with data:
 ```swift
 navigate.to(
 	_ storyboardToGo: "NameOfStoryboardToGo",
@@ -58,9 +59,9 @@ navigate.to(
 )
 ```
 
-**Both functions return Go class and it has:**
+**Both functions return [Go]() class and it has:**
 
-→ When you are using .to(...) you need to call .go(...) after it. If you don't do it, you don't go anywhere:
+[→]() When you are using .to(...) you need to call .go(...) after it. If you don't do it, you don't go anywhere:
 ```swift
 navigate.to(/*Whatever type*/).go(segue: .push(animated: true))
 navigate.to(/*Whatever type*/).go()
@@ -73,7 +74,7 @@ navigationToAnotherViewController.go()
 navigationToAnotherViewController.go(segue: .push(animated: true)
 ```
 ### > .toGo
-→ If you want just to go to another UIViewController without sending data:
+[→]() If you want just to go to another UIViewController without sending data:
 ```swift
 // on current storyboard
 navigate.toGo(
@@ -89,10 +90,12 @@ navigate.toGo(
 	segue: .push(animated: true)//default: .push(animated: Go.defaultAnimated)
 )
 ```
+###### [Go.defaultAnimated is true, click here to know how to change.]()
 
 ## Stack
+###### _To see documentation. Click at →_
 
-→ Navigate to a new stack sending data or not:
+[→]() Navigate to a new stack sending data or not:
 ```swift
 // on current storyboard
 navigate.newStack(
@@ -107,11 +110,11 @@ navigate.newStack(
 
 ```
 
-**Both functions return Stack as optional, and Stack has:**
+**Both functions return [Stack]() as optional, and Stack has:**
 
 After you create your stack you need to specify to where you'll go:
 
-→ To specify an UIViewController and to send data:
+[→]() To specify an UIViewController and to send data:
 ```swift
 navigate.newStack(/*Whatever type*/).to(
 	viewControllerToGo: AnotherViewController.self,
@@ -127,7 +130,7 @@ myNewStack.to(
 	prepare: {(viewControllerToGo: AnotherViewController) in ...}
 )
 ```
-**This function return StackGo that you need to call to send your UIViewController to stack:**
+**This function return [StackGo]() that you need to call to send your UIViewController to stack:**
 ```swift
 navigate.newStack(...).to(...).go(
 	modalPresentationStyle: .fullScreen, //default value
@@ -148,7 +151,7 @@ to.go(
 )
 ```
 
-→ To specify an UIViewController and just go:
+[→]() To specify an UIViewController and just go:
 ```swift
 navigate.newStack(/*Whatever type*/).toGo(
 	viewControllerToGo: AnotherViewController.self,
