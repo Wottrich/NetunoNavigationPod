@@ -43,10 +43,11 @@ public class Go {
         - completion: When processing to initialize screen is completed, this function is called
      */
     /// - Tag: GoClass
-    public func go(segue: Segue = .push(animated: Go.defaultAnimated))  {
+    @discardableResult
+    public func go(segue: Segue = .push(animated: Go.defaultAnimated)) -> Bool {
         
         guard let viewController = self.viewController, let nav = self.navigationController else {
-            return
+            return false
         }
         
         switch segue {
@@ -74,6 +75,8 @@ public class Go {
             viewController.modalPresentationStyle = modalPresentationStyle
             nav.present(viewController, animated: animated ?? true, completion: completion)
         }
+        
+        return true
         
     }
     

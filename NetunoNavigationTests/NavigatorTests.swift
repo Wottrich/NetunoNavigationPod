@@ -7,27 +7,57 @@
 //
 
 import XCTest
+import NetunoNavigation
+@testable import NetunoNavigationExample
 
 class NavigatorTests: XCTestCase {
 
+    var sut: NavigatorMock!
+    var navigate: Navigator!
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        let viewControllersType:[UIViewController.Type] = [
+            FinishOneToAndGoViewController.self,
+            StartOneToAndGoViewController.self
+        ]
+        
+        self.sut = NavigatorMock(storyboardName: "ToAndGoStoryboard", bundle: nil, viewControllersType: viewControllersType)
+        
+        self.navigate = Navigator(navigationController: sut.navigationController)
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        self.sut = nil
+        self.navigate = nil
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func test_navigationAndCurrentVIewControllerNotNil () {
+        XCTAssertNotNil(sut, "Sut must not be nul")
+        XCTAssertNotNil(sut.currentViewController, "CurrentViewController must not be nil")
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_toAndGoToAnotherViewController () {
+        
+        XCTAssertNotNil(sut.currentViewController, "CurrentViewController must not be nil")
+        XCTAssertEqual(true, sut.validTopViewController(type: StartOneToAndGoViewController.self))
+        
+        let to = navigate.to(sut.currentViewController!, viewControllerToGo: FinishOneToAndGoViewController.self)
+        
+        XCTAssertNotNil(to, "Function to need return GO not nil")
+        
+        let result = to.go()
+        
+        XCTAssertEqual(true, result, "Result must be true")
+        
+        _ = expectation(
+            for: sut.predicate{ $0 is FinishOneToAndGoViewController },
+            evaluatedWith: sut.navigationController,
+            handler: .none
+        )
+        
+        waitForExpectations(timeout: 5, handler: .none)
+        
     }
 
 }

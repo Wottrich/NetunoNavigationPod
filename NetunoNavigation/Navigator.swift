@@ -8,46 +8,55 @@
 
 import UIKit
 
+protocol NavigatorProtocol {
+    
+    var navigationController: UINavigationController? { get set }
+    var viewController: UIViewController? { get set }
+    
+    func to<T: UIViewController> (
+        _ currentViewController: UIViewController,
+        viewControllerToGo _: T.Type,
+        prepare: ((T?) -> Void)?
+    ) -> Go
+    
+    func to<T: UIViewController> (
+        _ storyboardToGo: String,
+        viewControllerToGo: T.Type,
+        prepare: ((T?) -> Void)?
+    ) -> Go
+    
+}
+
 /**
  
  */
 /// - Tag: NavigateClass
-public class Navigator {
+public class Navigator: NavigatorProtocol {
     
-    static var identifierInitialNavigationController = ""
+    //Internal
+    internal var viewController: UIViewController?
     
+    //Public
     public var navigationController: UINavigationController?
-    
-    //When navigationController is not nil
-    public init (navigationController nav: UINavigationController?, rootViewController: UIViewController) {
-        if let navigationController = nav {
-            self.navigationController = navigationController
-        } else {
-            self.navigationController = NavigatorController(rootViewController: rootViewController)
-        }
-    }
     
     public init (navigationController nav: UINavigationController?) {
         self.navigationController = nav
     }
-        
-    private var viewController: UIViewController?
-    private var anotherNavigationController: UINavigationController?
     
     // MARK: - to()
-    public func to<T: UIViewController> (
+    public func to<T: UIViewController>(
         _ currentViewController: UIViewController,
-        viewControllerToGo: T.Type,
+        viewControllerToGo _: T.Type,
         prepare: ((T?) -> Void)? = nil
     ) -> Go {
-        
+
         viewController = T.storyboardInstance(currentViewController: currentViewController) as? T
         prepare?(viewController as? T)
-        
+
         return Go(self.navigationController, viewController)
-        
+
     }
-    
+        
     public func to<T: UIViewController> (
         _ storyboardToGo: String,
         viewControllerToGo: T.Type,
