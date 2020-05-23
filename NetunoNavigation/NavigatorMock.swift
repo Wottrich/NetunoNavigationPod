@@ -11,17 +11,19 @@ import UIKit
 public class NavigatorMock {
     
     public var storyboard: UIStoryboard!
+    public var window: UIWindow?
     public var navigationController: UINavigationController!
+    public var anotherNavController: UINavigationController!
     public var currentViewController: UIViewController? {
         get {
             return navigationController.topViewController
         }
     }
     
-    public convenience init(storyboardName: String, bundle: Bundle?, viewControllersType: [UIViewController.Type]) {
+    public convenience init(window: UIWindow?, storyboard: UIStoryboard, initNavController: String, anotherNavController: String, viewControllersType: [UIViewController.Type]) {
         
-        let navigationController = UINavigationController()
-        let storyboard = UIStoryboard(name: "ToAndGoStoryboard", bundle: nil)
+        let navigationController = storyboard.instantiateViewController(identifier: initNavController) as UINavigationController
+        
         var viewControllers: [UIViewController] = []
         
         for type in viewControllersType {
@@ -31,12 +33,14 @@ public class NavigatorMock {
         
         navigationController.viewControllers = viewControllers
         
-        self.init(storyboard: storyboard, navigationController: navigationController)
+        self.init(window: window, storyboard: storyboard, anotherNavController: anotherNavController, navigationController: navigationController)
     }
     
-    public init (storyboard: UIStoryboard, navigationController: UINavigationController) {
+    public init (window: UIWindow?, storyboard: UIStoryboard, anotherNavController: String, navigationController: UINavigationController) {
+        self.window = window
         self.storyboard = storyboard
         self.navigationController = navigationController
+        self.anotherNavController = storyboard.instantiateViewController(identifier: anotherNavController)
     }
     
     public func validTopViewController<T: UIViewController> (type _: T.Type) -> Bool {
@@ -45,7 +49,13 @@ public class NavigatorMock {
     
     public func predicate (_ expression: @escaping (UIViewController?) -> Bool) -> NSPredicate {
         return NSPredicate { input, _ in
-            return expression((input as? UINavigationController)?.topViewController)
+            if let navController = input as? UINavigationController {
+                return expression(navController.topViewController)
+            } else if let mWindow = input as? UIWindow {
+                return expression(mWindow.rootViewController)
+            }
+            
+            return expression(nil)
         }
     }
     

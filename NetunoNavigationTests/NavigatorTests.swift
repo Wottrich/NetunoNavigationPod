@@ -12,17 +12,39 @@ import NetunoNavigation
 
 class NavigatorTests: XCTestCase {
 
+    private let initNavigationControllerIdentifier = Start_TO_GO_SAME_StoryboardViewController.rootNavigationControllerIdentifier
+    private let newStackIdentifier = Start_NEW_STACK_SAME_StoryboardViewController.rootNavigationControllerIdentifier
+    private let anotherStoryboard = "ToAndGoAnotherStoryboard"
+    
     var sut: NavigatorMock!
+    var sutAnotherStoryboard: NavigatorMock!
     var navigate: Navigator!
     
     override func setUp() {
         
         let viewControllersType:[UIViewController.Type] = [
-            FinishOneToAndGoViewController.self,
-            StartOneToAndGoViewController.self
+            Finish_TO_GO_SAME_StoryboardViewController.self,
+            Start_TO_GO_SAME_StoryboardViewController.self
         ]
         
-        self.sut = NavigatorMock(storyboardName: "ToAndGoStoryboard", bundle: nil, viewControllersType: viewControllersType)
+        let storyboard = UIStoryboard(name: "ToAndGoStoryboard", bundle: nil)
+        
+        guard let window = UIApplication.shared.connectedScenes
+            .filter({$0.activationState == .foregroundActive}).map({$0 as? UIWindowScene})
+            .compactMap({$0}).first?.windows
+            .filter({$0.isKeyWindow}).first
+        else {
+            XCTFail("Window should not be null")
+            return
+        }
+        
+        self.sut = NavigatorMock(
+            window: window,
+            storyboard: storyboard,
+            initNavController: initNavigationControllerIdentifier,
+            anotherNavController: newStackIdentifier,
+            viewControllersType: viewControllersType
+        )
         
         self.navigate = Navigator(navigationController: sut.navigationController)
     }
@@ -32,32 +54,135 @@ class NavigatorTests: XCTestCase {
         self.navigate = nil
     }
 
-    func test_navigationAndCurrentVIewControllerNotNil () {
-        XCTAssertNotNil(sut, "Sut must not be nul")
-        XCTAssertNotNil(sut.currentViewController, "CurrentViewController must not be nil")
+    func test_Navigation_CurrentViewController_NotNil () {
+        XCTAssertNotNil(sut, "Sut should not be nul")
+        XCTAssertNotNil(sut.currentViewController, "CurrentViewController should not be nil")
     }
     
-    func test_toAndGoToAnotherViewController () {
+    func test_Navigate_NotNil () {
+        XCTAssertNotNil(self.navigate, "Navigate should not be nil")
+    }
+    
+    func test_Navigate_NavigationController_Storyboard_notNil () {
+        XCTAssertNotNil(self.navigate.navigationController)
+        XCTAssertNotNil(self.navigate.navigationController?.storyboard)
+    }
+    
+    func test_To_NotNil () {
+        XCTAssertNotNil(self.navigate.to(sut.currentViewController!, viewControllerToGo: Finish_TO_GO_SAME_StoryboardViewController.self))
+    }
+    
+    func test_Go_ReturnTrue () {
+        let to = self.navigate.to(sut.currentViewController!, viewControllerToGo: Finish_TO_GO_SAME_StoryboardViewController.self)
+        XCTAssertEqual(true, to.go(), ".go() should be true")
+    }
+    
+    func test_Go_ReturnFalse () {
+        let viewController = UIViewController()//ViewController without storyboard
+        let to = self.navigate.to(viewController, viewControllerToGo: Finish_TO_GO_SAME_StoryboardViewController.self)
+        XCTAssertEqual(false, to.go(), ".go() should not be true")
+    }
+    
+    func test_To_Prepare_Go () {
         
-        XCTAssertNotNil(sut.currentViewController, "CurrentViewController must not be nil")
-        XCTAssertEqual(true, sut.validTopViewController(type: StartOneToAndGoViewController.self))
-        
-        let to = navigate.to(sut.currentViewController!, viewControllerToGo: FinishOneToAndGoViewController.self)
-        
-        XCTAssertNotNil(to, "Function to need return GO not nil")
-        
-        let result = to.go()
-        
-        XCTAssertEqual(true, result, "Result must be true")
+        self.navigate.to(sut.currentViewController!, viewControllerToGo: Finish_TO_GO_SAME_StoryboardViewController.self) {
+            XCTAssertEqual(false, $0?.receivedData, "Received Data should be false before .go(...)")
+            $0?.receivedData = true
+        }.go()
         
         _ = expectation(
-            for: sut.predicate{ $0 is FinishOneToAndGoViewController },
+            for: sut.predicate{ $0 is Finish_TO_GO_SAME_StoryboardViewController },
             evaluatedWith: sut.navigationController,
             handler: .none
         )
+               
+        waitForExpectations(timeout: 5, handler: .none)
         
+        let currentViewController = sut.currentViewController as? Finish_TO_GO_SAME_StoryboardViewController
+        XCTAssertEqual(true, currentViewController?.receivedData, "Received Data should be true after .go(...)")
+        
+    }
+    
+    func test_To_AnotherStoryboard_NoThrow () {
+        XCTAssertNoThrow(self.navigate.to(anotherStoryboard, viewControllerToGo: Start_TO_GO_ANOTHER_StoryboardViewController.self))
+    }
+    
+    func test_Go_ReturnTrue_AnotherStoryboard () {
+        let to = self.navigate.to(anotherStoryboard, viewControllerToGo: Start_TO_GO_ANOTHER_StoryboardViewController.self)
+        XCTAssertEqual(true, to.go(), ".go() should be true")
+    }
+    
+    func test_To_Prepare_Go_AnotherStoryboard () {
+        self.navigate.to(anotherStoryboard, viewControllerToGo: Start_TO_GO_ANOTHER_StoryboardViewController.self) {
+            XCTAssertEqual(false, $0?.receivedData)
+            $0?.receivedData = true
+        }.go()
+        
+        _ = expectation(
+            for: sut.predicate{ $0 is Start_TO_GO_ANOTHER_StoryboardViewController },
+            evaluatedWith: sut.navigationController,
+            handler: .none
+        )
+               
+        waitForExpectations(timeout: 5, handler: .none)
+        
+        let currentViewController = sut.currentViewController as? Start_TO_GO_ANOTHER_StoryboardViewController
+        XCTAssertEqual(true, currentViewController?.receivedData, "Received Data should be true after .go(...)")
+    }
+    
+    func test_ToGo_NotNil () {
+        XCTAssertNotNil(self.navigate.toGo(sut.currentViewController!, viewControllerToGo: Finish_TO_GO_SAME_StoryboardViewController.self))
+    }
+    
+    func test_ToGo () {
+        self.navigate.toGo(sut.currentViewController!, viewControllerToGo: Finish_TO_GO_SAME_StoryboardViewController.self)
+        
+        _ = expectation(
+            for: sut.predicate{ $0 is Finish_TO_GO_SAME_StoryboardViewController },
+            evaluatedWith: sut.navigationController,
+            handler: .none
+        )
+               
         waitForExpectations(timeout: 5, handler: .none)
         
     }
-
+    
+    func test_ToGo_AnotherStoryboard () {
+        
+        self.navigate.toGo(anotherStoryboard, viewControllerToGo: Start_TO_GO_ANOTHER_StoryboardViewController.self)
+        
+        _ = expectation(
+            for: sut.predicate{ $0 is Start_TO_GO_ANOTHER_StoryboardViewController },
+            evaluatedWith: sut.navigationController,
+            handler: .none
+        )
+               
+        waitForExpectations(timeout: 5, handler: .none)
+        
+    }
+    
+    func test_newStack_SameStoryboard_Nil () {
+        self.navigate.navigationController = nil
+        XCTAssertNil(self.navigate.newStack(navControllerToGo: newStackIdentifier))
+    }
+    
+    func test_newStack_SameStoryboard_NotNil () {
+        XCTAssertNotNil(self.navigate.newStack(navControllerToGo: newStackIdentifier))
+    }
+    
+    func test_newStack_To_Go () {
+        let newStack = self.navigate.newStack(navControllerToGo: newStackIdentifier)!
+        let to = newStack.to(viewControllerToGo: Start_NEW_STACK_SAME_StoryboardViewController.self)
+        to.go()
+        
+        _ = expectation(
+            for: sut.predicate{ $0 is Start_NEW_STACK_SAME_StoryboardViewController },
+            evaluatedWith: sut.anotherNavController,
+            handler: .none
+        )
+               
+        waitForExpectations(timeout: 5, handler: .none)
+        
+    }
+    
 }

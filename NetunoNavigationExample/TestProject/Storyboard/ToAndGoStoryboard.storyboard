@@ -10,7 +10,7 @@
         <!--Navigation Controller-->
         <scene sceneID="i72-ct-TO2">
             <objects>
-                <navigationController id="VYv-cR-rGU" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="InitNavigationControllerSameStoryboard" id="VYv-cR-rGU" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9f3-FQ-ClN">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -23,10 +23,10 @@
             </objects>
             <point key="canvasLocation" x="-849" y="151"/>
         </scene>
-        <!--Start One To And Go View Controller-->
+        <!--StartTOGOSAME Storyboard View Controller-->
         <scene sceneID="VkU-bN-gph">
             <objects>
-                <viewController storyboardIdentifier="StartOneToAndGoViewController" id="mn0-ES-EC8" customClass="StartOneToAndGoViewController" customModule="NetunoNavigationExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Start_TO_GO_SAME_StoryboardViewController" id="mn0-ES-EC8" customClass="Start_TO_GO_SAME_StoryboardViewController" customModule="NetunoNavigationExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GLz-1B-Cny">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -68,10 +68,10 @@
             </objects>
             <point key="canvasLocation" x="133" y="151"/>
         </scene>
-        <!--Finish One To And Go View Controller-->
+        <!--FinishTOGOSAME Storyboard View Controller-->
         <scene sceneID="6Sj-mv-xpq">
             <objects>
-                <viewController storyboardIdentifier="FinishOneToAndGoViewController" id="lvb-Nn-U4s" customClass="FinishOneToAndGoViewController" customModule="NetunoNavigationExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Finish_TO_GO_SAME_StoryboardViewController" id="lvb-Nn-U4s" customClass="Finish_TO_GO_SAME_StoryboardViewController" customModule="NetunoNavigationExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5ue-Hv-gTE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,6 +82,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xxo-VC-e4s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1043" y="151"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jSA-Zm-qTI">
+            <objects>
+                <navigationController storyboardIdentifier="NewNavigationControllerSameStoryboard" id="fya-q6-7c9" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mXm-93-Xkd">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Pv1-fR-evs" kind="relationship" relationship="rootViewController" id="BcM-Sb-go9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f7m-oW-J6I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1218" y="-802"/>
+        </scene>
+        <!--StartNEWSTACKSAME Storyboard View Controller-->
+        <scene sceneID="Jxt-f0-V8S">
+            <objects>
+                <viewController storyboardIdentifier="Start_NEW_STACK_SAME_StoryboardViewController" id="Pv1-fR-evs" customClass="Start_NEW_STACK_SAME_StoryboardViewController" customModule="NetunoNavigationExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZoM-sB-wpI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="tOZ-AI-237"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="IHA-Hx-fnA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eke-d7-TlQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2091" y="-813"/>
         </scene>
     </scenes>
 </document>

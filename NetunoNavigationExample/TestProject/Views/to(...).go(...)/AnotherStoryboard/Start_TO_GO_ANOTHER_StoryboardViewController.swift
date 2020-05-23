@@ -1,15 +1,17 @@
 //
-//  FinishOneToAndGoViewController.swift
+//  StartOneToAndGoSameStoryboardViewController.swift
 //  NetunoNavigationExample
 //
-//  Created by Wottrich on 21/05/20.
+//  Created by Wottrich on 22/05/20.
 //  Copyright © 2020 Wottrich Technology Company. All rights reserved.
 //
 
 import UIKit
 
-class FinishOneToAndGoViewController: BaseViewController {
+class Start_TO_GO_ANOTHER_StoryboardViewController: UIViewController {
 
+    var receivedData: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

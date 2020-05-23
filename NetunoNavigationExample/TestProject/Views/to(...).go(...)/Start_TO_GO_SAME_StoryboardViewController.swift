@@ -8,8 +8,10 @@
 
 import UIKit
 
-class StartOneToAndGoViewController: BaseViewController {
+class Start_TO_GO_SAME_StoryboardViewController: BaseViewController {
 
+    public static let rootNavigationControllerIdentifier = "InitNavigationControllerSameStoryboard"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -18,7 +20,7 @@ class StartOneToAndGoViewController: BaseViewController {
     @IBAction func didTapNextViewControllerWithoutPrepareOnCurrentStoryboard(_ sender: Any?) {
         self.navigate.to(
             self,
-            viewControllerToGo: FinishOneToAndGoViewController.self
+            viewControllerToGo: Finish_TO_GO_SAME_StoryboardViewController.self
         ).go()
     }
 
