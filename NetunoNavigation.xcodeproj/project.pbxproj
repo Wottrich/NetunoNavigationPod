@@ -30,6 +30,11 @@
 		ABB7F72D244FE48D00C22383 /* Go.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB7F72C244FE48D00C22383 /* Go.swift */; };
 		ABB7F72F244FE4BF00C22383 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB7F72E244FE4BF00C22383 /* Stack.swift */; };
 		ABB7F731244FE4EC00C22383 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB7F730244FE4EC00C22383 /* Navigator.swift */; };
+		ABEDF93E247A3C2D006C0BA3 /* Start_NEW_STACK_ANOTHER_StoryboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDF93D247A3C2D006C0BA3 /* Start_NEW_STACK_ANOTHER_StoryboardViewController.swift */; };
+		ABEDF941247A5077006C0BA3 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDF940247A5077006C0BA3 /* UINavigationControllerExtension.swift */; };
+		ABEDF943247A50B0006C0BA3 /* NavigatorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDF942247A50B0006C0BA3 /* NavigatorExtension.swift */; };
+		ABEDF945247A5104006C0BA3 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDF944247A5104006C0BA3 /* UIViewControllerExtension.swift */; };
+		ABEDF947247A5142006C0BA3 /* NavigatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDF946247A5142006C0BA3 /* NavigatorProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +92,11 @@
 		ABB7F72C244FE48D00C22383 /* Go.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Go.swift; sourceTree = "<group>"; };
 		ABB7F72E244FE4BF00C22383 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		ABB7F730244FE4EC00C22383 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		ABEDF93D247A3C2D006C0BA3 /* Start_NEW_STACK_ANOTHER_StoryboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start_NEW_STACK_ANOTHER_StoryboardViewController.swift; sourceTree = "<group>"; };
+		ABEDF940247A5077006C0BA3 /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
+		ABEDF942247A50B0006C0BA3 /* NavigatorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorExtension.swift; sourceTree = "<group>"; };
+		ABEDF944247A5104006C0BA3 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		ABEDF946247A5142006C0BA3 /* NavigatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +225,7 @@
 		ABAE7D7F2478BE77003C696D /* newStack(...) */ = {
 			isa = PBXGroup;
 			children = (
+				ABEDF93C247A3C08006C0BA3 /* AnotherStoryboard */,
 				ABAE7D802478BEA3003C696D /* Start_NEW_STACK_SAME_StoryboardViewController.swift */,
 			);
 			path = "newStack(...)";
@@ -245,6 +256,7 @@
 		ABB7F6F5244F68E700C22383 /* NetunoNavigation */ = {
 			isa = PBXGroup;
 			children = (
+				ABEDF93F247A5060006C0BA3 /* Extensions */,
 				ABB7F729244FE41E00C22383 /* Application */,
 				ABB7F727244FE36F00C22383 /* NavigatorController.swift */,
 				ABB7F72A244FE46D00C22383 /* Segue.swift */,
@@ -252,6 +264,7 @@
 				ABB7F72E244FE4BF00C22383 /* Stack.swift */,
 				ABB7F730244FE4EC00C22383 /* Navigator.swift */,
 				ABAE7D6D247737FA003C696D /* NavigatorMock.swift */,
+				ABEDF946247A5142006C0BA3 /* NavigatorProtocol.swift */,
 			);
 			path = NetunoNavigation;
 			sourceTree = "<group>";
@@ -284,6 +297,24 @@
 				ABB7F6F7244F68E700C22383 /* Info.plist */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		ABEDF93C247A3C08006C0BA3 /* AnotherStoryboard */ = {
+			isa = PBXGroup;
+			children = (
+				ABEDF93D247A3C2D006C0BA3 /* Start_NEW_STACK_ANOTHER_StoryboardViewController.swift */,
+			);
+			path = AnotherStoryboard;
+			sourceTree = "<group>";
+		};
+		ABEDF93F247A5060006C0BA3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ABEDF940247A5077006C0BA3 /* UINavigationControllerExtension.swift */,
+				ABEDF942247A50B0006C0BA3 /* NavigatorExtension.swift */,
+				ABEDF944247A5104006C0BA3 /* UIViewControllerExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -469,12 +500,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABEDF941247A5077006C0BA3 /* UINavigationControllerExtension.swift in Sources */,
 				ABB7F72F244FE4BF00C22383 /* Stack.swift in Sources */,
+				ABEDF945247A5104006C0BA3 /* UIViewControllerExtension.swift in Sources */,
 				ABB7F731244FE4EC00C22383 /* Navigator.swift in Sources */,
+				ABEDF943247A50B0006C0BA3 /* NavigatorExtension.swift in Sources */,
 				ABB7F728244FE36F00C22383 /* NavigatorController.swift in Sources */,
 				ABAE7D6E247737FA003C696D /* NavigatorMock.swift in Sources */,
 				ABB7F72B244FE46D00C22383 /* Segue.swift in Sources */,
 				ABB7F72D244FE48D00C22383 /* Go.swift in Sources */,
+				ABEDF947247A5142006C0BA3 /* NavigatorProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +521,7 @@
 				ABB7F709244F69CE00C22383 /* BaseViewController.swift in Sources */,
 				ABAE7D68247639CE003C696D /* Start_TO_GO_SAME_StoryboardViewController.swift in Sources */,
 				ABB7F705244F69CE00C22383 /* AppDelegate.swift in Sources */,
+				ABEDF93E247A3C2D006C0BA3 /* Start_NEW_STACK_ANOTHER_StoryboardViewController.swift in Sources */,
 				ABB7F707244F69CE00C22383 /* SceneDelegate.swift in Sources */,
 				ABAE7D7A2478AFE0003C696D /* Finish_TO_GO_SAME_StoryboardViewController.swift in Sources */,
 				ABAE7D812478BEA3003C696D /* Start_NEW_STACK_SAME_StoryboardViewController.swift in Sources */,

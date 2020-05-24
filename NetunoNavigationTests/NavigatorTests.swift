@@ -13,6 +13,7 @@ import NetunoNavigation
 class NavigatorTests: XCTestCase {
 
     private let initNavigationControllerIdentifier = Start_TO_GO_SAME_StoryboardViewController.rootNavigationControllerIdentifier
+    private let newStackAnotherStoryboardIdentifier = Start_NEW_STACK_ANOTHER_StoryboardViewController.rootNavigationControllerIdentifier
     private let newStackIdentifier = Start_NEW_STACK_SAME_StoryboardViewController.rootNavigationControllerIdentifier
     private let anotherStoryboard = "ToAndGoAnotherStoryboard"
     
@@ -23,7 +24,6 @@ class NavigatorTests: XCTestCase {
     override func setUp() {
         
         let viewControllersType:[UIViewController.Type] = [
-            Finish_TO_GO_SAME_StoryboardViewController.self,
             Start_TO_GO_SAME_StoryboardViewController.self
         ]
         
@@ -177,12 +177,159 @@ class NavigatorTests: XCTestCase {
         
         _ = expectation(
             for: sut.predicate{ $0 is Start_NEW_STACK_SAME_StoryboardViewController },
-            evaluatedWith: sut.anotherNavController,
+            evaluatedWith: newStack.navigationController,
             handler: .none
         )
                
         waitForExpectations(timeout: 5, handler: .none)
         
+    }
+    
+    func test_newStack_To_Go_NewViewController () {
+        let newStack = self.navigate.newStack(navControllerToGo: newStackIdentifier)!
+        //ViewController is not TopViewController (Internal will clear old stack and init new stack with this viewController)
+        let to = newStack.to(viewControllerToGo: Finish_TO_GO_SAME_StoryboardViewController.self)
+        to.go()
+        
+        _ = expectation(
+            for: sut.predicate{ $0 is Finish_TO_GO_SAME_StoryboardViewController },
+            evaluatedWith: newStack.navigationController,
+            handler: .none
+        )
+               
+        waitForExpectations(timeout: 5, handler: .none)
+        
+    }
+    
+    func test_newStack_To_Go_AnotherStoryboard () {
+        let newStack = self.navigate.newStack(navControllerToGo: newStackAnotherStoryboardIdentifier, anotherStoryboard)!
+        let to = newStack.to(viewControllerToGo: Start_NEW_STACK_ANOTHER_StoryboardViewController.self)
+        to.go()
+        
+        _ = expectation(
+            for: sut.predicate{ $0 is Start_NEW_STACK_ANOTHER_StoryboardViewController },
+            evaluatedWith: newStack.navigationController,
+            handler: .none
+        )
+               
+        waitForExpectations(timeout: 5, handler: .none)
+        
+    }
+    
+    func test_newStack_To_Go_AnotherStoryboard_NewViewController () {
+        let newStack = self.navigate.newStack(navControllerToGo: newStackAnotherStoryboardIdentifier, anotherStoryboard)!
+        //ViewController is not TopViewController (Internal will clear old stack and init new stack with this viewController)
+        let to = newStack.to(viewControllerToGo: Start_TO_GO_ANOTHER_StoryboardViewController.self)
+        to.go()
+        
+        _ = expectation(
+            for: sut.predicate{ $0 is Start_TO_GO_ANOTHER_StoryboardViewController },
+            evaluatedWith: newStack.navigationController,
+            handler: .none
+        )
+               
+        waitForExpectations(timeout: 5, handler: .none)
+        
+    }
+    
+    func test_newStack_To_Prepare_Go () {
+        let newStack = self.navigate.newStack(navControllerToGo: newStackIdentifier)!
+        let to = newStack.to(viewControllerToGo: Start_NEW_STACK_SAME_StoryboardViewController.self) {
+            XCTAssertEqual(false, $0?.receivedData)
+            $0?.receivedData = true
+        }
+        to.go()
+        
+        let viewController = newStack.navigationController.topViewController as? Start_NEW_STACK_SAME_StoryboardViewController
+        XCTAssertNotNil(viewController)
+        XCTAssertEqual(true, viewController!.receivedData)
+        
+    }
+    
+    func test_newStack_To_Prepare_Go_NewViewController () {
+        let newStack = self.navigate.newStack(navControllerToGo: newStackIdentifier)!
+        //ViewController is not TopViewController (Internal will clear old stack and init new stack with this viewController)
+        let to = newStack.to(viewControllerToGo: Finish_TO_GO_SAME_StoryboardViewController.self) {
+            XCTAssertEqual(false, $0?.receivedData)
+            $0?.receivedData = true
+        }
+        to.go()
+        
+        let viewController = newStack.navigationController.topViewController as? Finish_TO_GO_SAME_StoryboardViewController
+        XCTAssertNotNil(viewController)
+        XCTAssertEqual(true, viewController!.receivedData)
+        
+    }
+    
+    func test_newStack_To_Prepare_Go_AnotherStoryboard () {
+        let newStack = self.navigate.newStack(navControllerToGo: newStackAnotherStoryboardIdentifier, anotherStoryboard)!
+        let to = newStack.to(viewControllerToGo: Start_NEW_STACK_ANOTHER_StoryboardViewController.self) {
+            XCTAssertEqual(false, $0?.receivedData)
+            $0?.receivedData = true
+        }
+        to.go()
+        
+        let viewController = newStack.navigationController.topViewController as? Start_NEW_STACK_ANOTHER_StoryboardViewController
+        XCTAssertNotNil(viewController)
+        XCTAssertEqual(true, viewController!.receivedData)
+    }
+    
+    func test_newStack_To_Prepare_Go_AnotherStoryboard_NewViewController () {
+        let newStack = self.navigate.newStack(navControllerToGo: newStackAnotherStoryboardIdentifier, anotherStoryboard)!
+        //ViewController is not TopViewController (Internal will clear old stack and init new stack with this viewController)
+        let to = newStack.to(viewControllerToGo: Start_TO_GO_ANOTHER_StoryboardViewController.self) {
+            XCTAssertEqual(false, $0?.receivedData)
+            $0?.receivedData = true
+        }
+        to.go()
+        
+        let viewController = newStack.navigationController.topViewController as? Start_TO_GO_ANOTHER_StoryboardViewController
+        XCTAssertNotNil(viewController)
+        XCTAssertEqual(true, viewController!.receivedData)
+        
+    }
+    
+    func test_newStack_ToGo () {
+        let newStack = self.navigate.newStack(navControllerToGo: newStackIdentifier)
+        let to = newStack?.toGo()
+        XCTAssertEqual(true, to?.navigationController.topViewController is Start_NEW_STACK_SAME_StoryboardViewController)
+    }
+    
+    func test_newStack_ToGo_NewViewController () {
+        let newStack = self.navigate.newStack(navControllerToGo: newStackIdentifier)
+        let to = newStack?.toGo(viewControllerToGo: Finish_TO_GO_SAME_StoryboardViewController.self)
+        XCTAssertEqual(true, to?.navigationController.topViewController is Finish_TO_GO_SAME_StoryboardViewController)
+    }
+    
+    func test_newStack_ToGo_AnotherStoryboard () {
+        let newStack = self.navigate.newStack(navControllerToGo: newStackAnotherStoryboardIdentifier, anotherStoryboard)
+        let to = newStack?.toGo(viewControllerToGo: Start_NEW_STACK_ANOTHER_StoryboardViewController.self)
+        XCTAssertEqual(true, to?.navigationController.topViewController is Start_NEW_STACK_ANOTHER_StoryboardViewController)
+    }
+    
+    func test_newStack_ToGo_AnotherStoryboard_NewViewController () {
+        let newStack = self.navigate.newStack(navControllerToGo: newStackAnotherStoryboardIdentifier, anotherStoryboard)
+        let to = newStack?.toGo(viewControllerToGo: Start_TO_GO_ANOTHER_StoryboardViewController.self)
+        XCTAssertEqual(true, to?.navigationController.topViewController is Start_TO_GO_ANOTHER_StoryboardViewController)
+    }
+    
+    func test_newStackToGo () {
+        let newStack = self.navigate.newStackToGo(newStackIdentifier)
+        XCTAssertEqual(true, newStack?.navigationController.topViewController is Start_NEW_STACK_SAME_StoryboardViewController)
+    }
+    
+    func test_newStackToGo_AnotherStoryboard () {
+        let newStack = self.navigate.newStackToGo(newStackAnotherStoryboardIdentifier, anotherStoryboard)
+        XCTAssertEqual(true, newStack?.navigationController.topViewController is Start_NEW_STACK_ANOTHER_StoryboardViewController)
+    }
+    
+    func test_newStackToGo_AnotherStoryboard_NewViewController () {
+        let newStack = self.navigate.newStackToGo(
+            newStackAnotherStoryboardIdentifier,
+            anotherStoryboard,
+            viewControllerToGo: Start_TO_GO_ANOTHER_StoryboardViewController.self
+        )
+        XCTAssertEqual(true, newStack?.navigationController.topViewController is Start_TO_GO_ANOTHER_StoryboardViewController)
     }
     
 }

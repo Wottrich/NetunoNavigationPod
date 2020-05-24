@@ -8,6 +8,11 @@
 
 import UIKit
 
+public enum StackGoEnum {
+    case go (modalPresentationStyle: UIModalPresentationStyle, animated: Bool, completion: (() -> Void)?)
+    case go (animated: Bool, completion: (() -> Void)?)
+}
+
 /**
  The `Stack` class is used to create a new flow that usually start with a new `Storyboard` and new `UIViewController`
  This class is like a filter to not used a uncorrectly functions to start a new Stack,
@@ -15,14 +20,19 @@ import UIKit
  */
 public class Stack {
     
+    //Internal
     var actualNavigationController: UINavigationController
-    var navigationController: UINavigationController
     var viewController: UIViewController?
     
-    private lazy var stackGo: StackGo = {
-        StackGo(actualNavigationController: self.actualNavigationController, navigationController: self.navigationController)
-    }()
+    //Public
+    public var navigationController: UINavigationController
     
+    private var stackGo: StackGo {
+        get {
+            return StackGo(actualNavigationController: self.actualNavigationController, navigationController: self.navigationController)
+        }
+    }
+
     init (actualNavigationController: UINavigationController, navigationController: UINavigationController) {
         self.actualNavigationController = actualNavigationController
         self.navigationController = navigationController
@@ -33,11 +43,8 @@ public class Stack {
         prepare: ((T?) -> Void)? = nil
     ) -> StackGo {
         
-        if let firstViewController = self.navigationController.viewControllers.first, let tType = firstViewController as? T {
-            
-            prepare?(tType)
-        
-            return stackGo
+        if let viewController = self.navigationController.viewControllers.first as? T {
+            prepare?(viewController)
         } else {
             viewController = T.storyboardInstance(currentViewController: self.navigationController) as? T
             prepare?(viewController as? T)
@@ -47,33 +54,41 @@ public class Stack {
                 self.navigationController.viewControllers.append(viewController)
             }
             
-            return stackGo
         }
         
+        return stackGo
     }
     
+    @discardableResult
     public func toGo<T: UIViewController> (
-        viewControllerToGo: T.Type? = nil,
-        modalPresentationStyle: UIModalPresentationStyle = .fullScreen,
-        animated: Bool = true,
-        completion: (() -> Void)? = nil
-    ) {
-        if viewControllerToGo == nil {
-            stackGo.go(animated: animated, completion)
-        } else if let firstViewController = self.navigationController.viewControllers.first, firstViewController is T {
-            stackGo.go(animated: animated, completion)
-        } else {
-            viewController = T.storyboardInstance(currentViewController: self.navigationController) as? T
-            
-            if let viewController = self.viewController {
-                self.navigationController.viewControllers.removeAll()
-                self.navigationController.viewControllers.append(viewController)
+        _ viewControllerToGo: T.Type? = nil,
+        go: StackGoEnum = .go(modalPresentationStyle: .fullScreen, animated: true, completion: nil)
+    ) -> Stack {
+
+        func goViewController (modalPresentationStyle: UIModalPresentationStyle?, animated: Bool, completion: (() -> Void)?) {
+
+            if viewControllerToGo != nil && !(self.navigationController.viewControllers.first is T) {
+                viewController = T.storyboardInstance(currentViewController: self.navigationController) as? T
+                
+                if let viewController = self.viewController {
+                    self.navigationController.viewControllers.removeAll()
+                    self.navigationController.viewControllers.append(viewController)
+                }
+                
             }
             
-            stackGo.go(modalPresentationStyle: modalPresentationStyle,animated: animated, completion)
+            stackGo.go(modalPresentationStyle: modalPresentationStyle, animated: animated, completion)
             
         }
         
+        switch go {
+        case let .go(modalPresentationStyle, animated, completion: ()):
+            goViewController(modalPresetationStyle: modalPresentationStyle, animated: animated, completion: completion)
+        case let .go(animated, completion):
+            goViewController(modalPresentationStyle: nil, animated: animated, completion: completion)
+        }
+        
+        return self
     }
     
 }
@@ -92,7 +107,7 @@ public class StackGo {
     }
     
     public func go (
-        modalPresentationStyle: UIModalPresentationStyle = .fullScreen,
+        modalPresentationStyle: UIModalPresentationStyle?:  = .fullScreen,
         animated: Bool = true,
         _ completion: (() -> Void)? = nil
     ) {

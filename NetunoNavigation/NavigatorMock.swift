@@ -14,6 +14,13 @@ public class NavigatorMock {
     public var window: UIWindow?
     public var navigationController: UINavigationController!
     public var anotherNavController: UINavigationController!
+    
+    public var currentViewControllerIntoAnotherNavController: UIViewController? {
+        get {
+            return anotherNavController.topViewController
+        }
+    }
+    
     public var currentViewController: UIViewController? {
         get {
             return navigationController.topViewController

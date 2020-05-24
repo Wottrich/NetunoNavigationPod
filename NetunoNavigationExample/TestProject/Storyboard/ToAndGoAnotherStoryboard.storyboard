@@ -22,5 +22,37 @@
             </objects>
             <point key="canvasLocation" x="-743" y="133"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eIH-mO-MYV">
+            <objects>
+                <navigationController storyboardIdentifier="NewNavigationControllerAnotherStoryboard" id="kF1-Ip-kOh" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JjS-Cx-Kpa">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="E0O-24-axG" kind="relationship" relationship="rootViewController" id="PNL-d5-w7x"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K5c-Xg-ujh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-45" y="-745"/>
+        </scene>
+        <!--StartNEWSTACKANOTHER Storyboard View Controller-->
+        <scene sceneID="EJ3-h4-dlB">
+            <objects>
+                <viewController storyboardIdentifier="Start_NEW_STACK_ANOTHER_StoryboardViewController" id="E0O-24-axG" customClass="Start_NEW_STACK_ANOTHER_StoryboardViewController" customModule="NetunoNavigationExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="joS-xb-Jqt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="qt0-Xs-vo0"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="afh-G0-teh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ru9-Aj-30q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="961" y="-745"/>
+        </scene>
     </scenes>
 </document>

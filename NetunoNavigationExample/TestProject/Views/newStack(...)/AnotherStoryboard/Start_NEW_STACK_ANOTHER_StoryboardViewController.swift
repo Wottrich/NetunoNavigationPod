@@ -1,16 +1,16 @@
 //
-//  Start_NEW_STACK_SAME_StoryboardViewController.swift
+//  Start_NEW_STACK_ANOTHER_StoryboardViewController.swift
 //  NetunoNavigationExample
 //
-//  Created by Wottrich on 22/05/20.
+//  Created by Wottrich on 24/05/20.
 //  Copyright © 2020 Wottrich Technology Company. All rights reserved.
 //
 
 import UIKit
 
-class Start_NEW_STACK_SAME_StoryboardViewController: UIViewController {
+class Start_NEW_STACK_ANOTHER_StoryboardViewController: UIViewController {
 
-    public static let rootNavigationControllerIdentifier = "NewNavigationControllerSameStoryboard"
+    public static let rootNavigationControllerIdentifier = "NewNavigationControllerAnotherStoryboard"
     
     var receivedData: Bool = false
     
