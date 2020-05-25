@@ -35,3 +35,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+class A: NSObject, UINavigationControllerDelegate {
+    
+    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+        
+    }
+    
+    
+}
+

@@ -48,9 +48,7 @@ public protocol NavigatorProtocol {
         _ navControllerToGo: String,
         _ storyboardToGo: String?,
         viewControllerToGo: T.Type?,
-        modalPresentationStyle: UIModalPresentationStyle,
-        animated: Bool,
-        _ completion: (() -> Void)?
+        style: ModalStyleEnum
     ) -> Stack?
     
 }

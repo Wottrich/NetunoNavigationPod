@@ -39,8 +39,6 @@ public class Go {
      
      - parameters:
         - segue: Segue is how your screen is called, default value is .push. Another value in [Segue](x-source-tag://SegueClass) class.
-        - animated: To know if screen need be called animated or not
-        - completion: When processing to initialize screen is completed, this function is called
      */
     /// - Tag: GoClass
     @discardableResult
@@ -55,15 +53,10 @@ public class Go {
             nav.show(viewController, sender: sender)
         case let .showDetail(sender):
             nav.showDetailViewController(viewController, sender: sender)
-        case let .presentModally(removeBackground, transitionStyle, animated, completion):
-            if removeBackground {
-                viewController.modalPresentationStyle = .overCurrentContext
-            } else {
-                viewController.modalPresentationStyle = .custom
-            }
-            
-            viewController.modalTransitionStyle = transitionStyle
-            nav.present(viewController, animated: animated ?? true, completion: completion)
+        case .presentModally(let modalStyle):
+            viewController.modalPresentationStyle = modalStyle.modalPresentationStyle ?? .fullScreen
+            viewController.modalTransitionStyle = modalStyle.modalTransitionStyle ?? .crossDissolve
+            nav.present(viewController, animated: modalStyle.animated, completion: modalStyle.completion)
         case let .presentAsPopover(animated, completion):
             nav.modalPresentationStyle = .popover
             nav.present(viewController, animated: animated ?? true, completion: completion)
@@ -71,9 +64,10 @@ public class Go {
             self.setAsRootViewController(viewController)
         case let .push(animated):
             nav.pushViewController(viewController, animated: animated ?? true)
-        case let .modal(modalPresentationStyle, animated, completion):
-            viewController.modalPresentationStyle = modalPresentationStyle
-            nav.present(viewController, animated: animated ?? true, completion: completion)
+        case .modal(let modalStyle):
+            viewController.modalPresentationStyle = modalStyle.modalPresentationStyle ?? .fullScreen
+            viewController.modalTransitionStyle = modalStyle.modalTransitionStyle ?? .crossDissolve
+            nav.present(viewController, animated: modalStyle.animated, completion: modalStyle.completion)
         }
         
         return true

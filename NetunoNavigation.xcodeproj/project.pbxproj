@@ -11,7 +11,6 @@
 		ABAE7D68247639CE003C696D /* Start_TO_GO_SAME_StoryboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAE7D67247639CE003C696D /* Start_TO_GO_SAME_StoryboardViewController.swift */; };
 		ABAE7D6A24763A1D003C696D /* ToAndGoStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABAE7D6924763A1D003C696D /* ToAndGoStoryboard.storyboard */; };
 		ABAE7D6E247737FA003C696D /* NavigatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAE7D6D247737FA003C696D /* NavigatorMock.swift */; };
-		ABAE7D7124789E2D003C696D /* ActionToTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAE7D7024789E2D003C696D /* ActionToTests.swift */; };
 		ABAE7D762478AEAD003C696D /* Start_TO_GO_ANOTHER_StoryboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAE7D752478AEAD003C696D /* Start_TO_GO_ANOTHER_StoryboardViewController.swift */; };
 		ABAE7D7A2478AFE0003C696D /* Finish_TO_GO_SAME_StoryboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAE7D792478AFE0003C696D /* Finish_TO_GO_SAME_StoryboardViewController.swift */; };
 		ABAE7D7C2478B09E003C696D /* ToAndGoAnotherStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABAE7D7B2478B09E003C696D /* ToAndGoAnotherStoryboard.storyboard */; };
@@ -25,7 +24,6 @@
 		ABB7F711244F69D000C22383 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABB7F70F244F69D000C22383 /* LaunchScreen.storyboard */; };
 		ABB7F71D244F70E500C22383 /* NavigatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB7F71C244F70E500C22383 /* NavigatorTests.swift */; };
 		ABB7F71F244F70E500C22383 /* NetunoNavigation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB7F6F3244F68E700C22383 /* NetunoNavigation.framework */; };
-		ABB7F728244FE36F00C22383 /* NavigatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB7F727244FE36F00C22383 /* NavigatorController.swift */; };
 		ABB7F72B244FE46D00C22383 /* Segue.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB7F72A244FE46D00C22383 /* Segue.swift */; };
 		ABB7F72D244FE48D00C22383 /* Go.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB7F72C244FE48D00C22383 /* Go.swift */; };
 		ABB7F72F244FE4BF00C22383 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB7F72E244FE4BF00C22383 /* Stack.swift */; };
@@ -35,6 +33,13 @@
 		ABEDF943247A50B0006C0BA3 /* NavigatorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDF942247A50B0006C0BA3 /* NavigatorExtension.swift */; };
 		ABEDF945247A5104006C0BA3 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDF944247A5104006C0BA3 /* UIViewControllerExtension.swift */; };
 		ABEDF947247A5142006C0BA3 /* NavigatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDF946247A5142006C0BA3 /* NavigatorProtocol.swift */; };
+		ABEDF949247B5022006C0BA3 /* NavigatorDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDF948247B5022006C0BA3 /* NavigatorDefault.swift */; };
+		ABEDF94C247B5AF3006C0BA3 /* NavigatorToTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDF94B247B5AF3006C0BA3 /* NavigatorToTests.swift */; };
+		ABEDF94E247B5EDE006C0BA3 /* XCTestCaseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDF94D247B5EDE006C0BA3 /* XCTestCaseExtension.swift */; };
+		ABEDF951247B62B6006C0BA3 /* NavigatorToTestsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDF950247B62B6006C0BA3 /* NavigatorToTestsMock.swift */; };
+		ABEDF954247B63FC006C0BA3 /* NewStackSameStoryboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDF953247B63FC006C0BA3 /* NewStackSameStoryboardTests.swift */; };
+		ABEDF956247B69A0006C0BA3 /* NewStackAnotherStoryboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDF955247B69A0006C0BA3 /* NewStackAnotherStoryboardTests.swift */; };
+		ABEDF958247B6D6C006C0BA3 /* NewStackTestsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDF957247B6D6C006C0BA3 /* NewStackTestsMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +73,6 @@
 		ABAE7D67247639CE003C696D /* Start_TO_GO_SAME_StoryboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start_TO_GO_SAME_StoryboardViewController.swift; sourceTree = "<group>"; };
 		ABAE7D6924763A1D003C696D /* ToAndGoStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ToAndGoStoryboard.storyboard; sourceTree = "<group>"; };
 		ABAE7D6D247737FA003C696D /* NavigatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorMock.swift; sourceTree = "<group>"; };
-		ABAE7D7024789E2D003C696D /* ActionToTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionToTests.swift; sourceTree = "<group>"; };
 		ABAE7D752478AEAD003C696D /* Start_TO_GO_ANOTHER_StoryboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start_TO_GO_ANOTHER_StoryboardViewController.swift; sourceTree = "<group>"; };
 		ABAE7D792478AFE0003C696D /* Finish_TO_GO_SAME_StoryboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Finish_TO_GO_SAME_StoryboardViewController.swift; sourceTree = "<group>"; };
 		ABAE7D7B2478B09E003C696D /* ToAndGoAnotherStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ToAndGoAnotherStoryboard.storyboard; sourceTree = "<group>"; };
@@ -87,7 +91,6 @@
 		ABB7F71A244F70E500C22383 /* NetunoNavigationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetunoNavigationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABB7F71C244F70E500C22383 /* NavigatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorTests.swift; sourceTree = "<group>"; };
 		ABB7F71E244F70E500C22383 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ABB7F727244FE36F00C22383 /* NavigatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorController.swift; sourceTree = "<group>"; };
 		ABB7F72A244FE46D00C22383 /* Segue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segue.swift; sourceTree = "<group>"; };
 		ABB7F72C244FE48D00C22383 /* Go.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Go.swift; sourceTree = "<group>"; };
 		ABB7F72E244FE4BF00C22383 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
@@ -97,6 +100,13 @@
 		ABEDF942247A50B0006C0BA3 /* NavigatorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorExtension.swift; sourceTree = "<group>"; };
 		ABEDF944247A5104006C0BA3 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		ABEDF946247A5142006C0BA3 /* NavigatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorProtocol.swift; sourceTree = "<group>"; };
+		ABEDF948247B5022006C0BA3 /* NavigatorDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorDefault.swift; sourceTree = "<group>"; };
+		ABEDF94B247B5AF3006C0BA3 /* NavigatorToTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorToTests.swift; sourceTree = "<group>"; };
+		ABEDF94D247B5EDE006C0BA3 /* XCTestCaseExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestCaseExtension.swift; sourceTree = "<group>"; };
+		ABEDF950247B62B6006C0BA3 /* NavigatorToTestsMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorToTestsMock.swift; sourceTree = "<group>"; };
+		ABEDF953247B63FC006C0BA3 /* NewStackSameStoryboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStackSameStoryboardTests.swift; sourceTree = "<group>"; };
+		ABEDF955247B69A0006C0BA3 /* NewStackAnotherStoryboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStackAnotherStoryboardTests.swift; sourceTree = "<group>"; };
+		ABEDF957247B6D6C006C0BA3 /* NewStackTestsMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStackTestsMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,15 +266,13 @@
 		ABB7F6F5244F68E700C22383 /* NetunoNavigation */ = {
 			isa = PBXGroup;
 			children = (
+				ABEDF94A247B5A59006C0BA3 /* Supporting Files */,
 				ABEDF93F247A5060006C0BA3 /* Extensions */,
 				ABB7F729244FE41E00C22383 /* Application */,
-				ABB7F727244FE36F00C22383 /* NavigatorController.swift */,
 				ABB7F72A244FE46D00C22383 /* Segue.swift */,
 				ABB7F72C244FE48D00C22383 /* Go.swift */,
 				ABB7F72E244FE4BF00C22383 /* Stack.swift */,
 				ABB7F730244FE4EC00C22383 /* Navigator.swift */,
-				ABAE7D6D247737FA003C696D /* NavigatorMock.swift */,
-				ABEDF946247A5142006C0BA3 /* NavigatorProtocol.swift */,
 			);
 			path = NetunoNavigation;
 			sourceTree = "<group>";
@@ -283,9 +291,11 @@
 		ABB7F71B244F70E500C22383 /* NetunoNavigationTests */ = {
 			isa = PBXGroup;
 			children = (
+				ABEDF952247B634F006C0BA3 /* NewStack */,
+				ABEDF94F247B6261006C0BA3 /* To and ToGo */,
 				ABB7F71C244F70E500C22383 /* NavigatorTests.swift */,
 				ABB7F71E244F70E500C22383 /* Info.plist */,
-				ABAE7D7024789E2D003C696D /* ActionToTests.swift */,
+				ABEDF94D247B5EDE006C0BA3 /* XCTestCaseExtension.swift */,
 			);
 			path = NetunoNavigationTests;
 			sourceTree = "<group>";
@@ -315,6 +325,35 @@
 				ABEDF944247A5104006C0BA3 /* UIViewControllerExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		ABEDF94A247B5A59006C0BA3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ABAE7D6D247737FA003C696D /* NavigatorMock.swift */,
+				ABEDF946247A5142006C0BA3 /* NavigatorProtocol.swift */,
+				ABEDF948247B5022006C0BA3 /* NavigatorDefault.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ABEDF94F247B6261006C0BA3 /* To and ToGo */ = {
+			isa = PBXGroup;
+			children = (
+				ABEDF94B247B5AF3006C0BA3 /* NavigatorToTests.swift */,
+				ABEDF950247B62B6006C0BA3 /* NavigatorToTestsMock.swift */,
+			);
+			path = "To and ToGo";
+			sourceTree = "<group>";
+		};
+		ABEDF952247B634F006C0BA3 /* NewStack */ = {
+			isa = PBXGroup;
+			children = (
+				ABEDF953247B63FC006C0BA3 /* NewStackSameStoryboardTests.swift */,
+				ABEDF955247B69A0006C0BA3 /* NewStackAnotherStoryboardTests.swift */,
+				ABEDF957247B6D6C006C0BA3 /* NewStackTestsMock.swift */,
+			);
+			path = NewStack;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -501,11 +540,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABEDF941247A5077006C0BA3 /* UINavigationControllerExtension.swift in Sources */,
+				ABEDF949247B5022006C0BA3 /* NavigatorDefault.swift in Sources */,
 				ABB7F72F244FE4BF00C22383 /* Stack.swift in Sources */,
 				ABEDF945247A5104006C0BA3 /* UIViewControllerExtension.swift in Sources */,
 				ABB7F731244FE4EC00C22383 /* Navigator.swift in Sources */,
 				ABEDF943247A50B0006C0BA3 /* NavigatorExtension.swift in Sources */,
-				ABB7F728244FE36F00C22383 /* NavigatorController.swift in Sources */,
 				ABAE7D6E247737FA003C696D /* NavigatorMock.swift in Sources */,
 				ABB7F72B244FE46D00C22383 /* Segue.swift in Sources */,
 				ABB7F72D244FE48D00C22383 /* Go.swift in Sources */,
@@ -532,8 +571,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABAE7D7124789E2D003C696D /* ActionToTests.swift in Sources */,
+				ABEDF954247B63FC006C0BA3 /* NewStackSameStoryboardTests.swift in Sources */,
+				ABEDF94E247B5EDE006C0BA3 /* XCTestCaseExtension.swift in Sources */,
+				ABEDF951247B62B6006C0BA3 /* NavigatorToTestsMock.swift in Sources */,
+				ABEDF956247B69A0006C0BA3 /* NewStackAnotherStoryboardTests.swift in Sources */,
 				ABB7F71D244F70E500C22383 /* NavigatorTests.swift in Sources */,
+				ABEDF94C247B5AF3006C0BA3 /* NavigatorToTests.swift in Sources */,
+				ABEDF958247B6D6C006C0BA3 /* NewStackTestsMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

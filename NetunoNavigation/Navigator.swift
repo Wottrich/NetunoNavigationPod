@@ -18,6 +18,11 @@ public class Navigator: NavigatorProtocol {
     //Public
     public var viewController: UIViewController?
     public var navigationController: UINavigationController?
+    public var `default`: NavigatorDefault {
+        get {
+            return NavigatorDefault(navigationController: self.navigationController)
+        }
+    }
     
     public init (navigationController nav: UINavigationController?) {
         self.navigationController = nav
@@ -34,7 +39,7 @@ public class Navigator: NavigatorProtocol {
         
         return Go(self.navigationController, viewController)
     }
-        
+    
     public func to<T: UIViewController> (
         _ storyboardToGo: String,
         viewControllerToGo: T.Type,
@@ -100,9 +105,7 @@ public class Navigator: NavigatorProtocol {
         _ navControllerToGo: String,
         _ storyboardToGo: String? = nil,
         viewControllerToGo: T.Type? = nil,
-        modalPresentationStyle: UIModalPresentationStyle = .fullScreen,
-        animated: Bool = false,
-        _ completion: (() -> Void)? = nil
+        style: ModalStyleEnum = .none
     ) -> Stack? {
         
         guard let actualNavController = self.navigationController else {return nil}
@@ -113,7 +116,7 @@ public class Navigator: NavigatorProtocol {
             guard let newNavigationController = instantiateViewController as? UINavigationController else {return nil}
             
             let stack = Stack(actualNavigationController: actualNavController, navigationController: newNavigationController)
-            return stack.toGo(viewControllerToGo)//TODO: here
+            return stack.toGo(viewControllerToGo, style: style)
             
         } else {
             
@@ -121,7 +124,7 @@ public class Navigator: NavigatorProtocol {
             guard let newNavigationController = instantiateViewController as? UINavigationController else {return nil}
             
             let stack = Stack(actualNavigationController: actualNavController, navigationController: newNavigationController)
-            return stack.toGo(viewControllerToGo)//TODO: here
+            return stack.toGo(viewControllerToGo, style: style)
             
         }
         

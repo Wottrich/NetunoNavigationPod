@@ -18,10 +18,6 @@ class Start_TO_GO_SAME_StoryboardViewController: BaseViewController {
     
 
     @IBAction func didTapNextViewControllerWithoutPrepareOnCurrentStoryboard(_ sender: Any?) {
-        self.navigate.to(
-            self,
-            viewControllerToGo: Finish_TO_GO_SAME_StoryboardViewController.self
-        ).go()
     }
 
 }
