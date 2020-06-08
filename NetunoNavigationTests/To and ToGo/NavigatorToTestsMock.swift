@@ -20,7 +20,7 @@ class NavigatorToTestsMock {
     }
     
     init(storyboard: UIStoryboard, initNavControllerIdentifier: String) {
-        self.navigationController = storyboard.instantiateViewController(identifier: initNavControllerIdentifier) as? UINavigationController
+        self.navigationController = storyboard.instantiateViewController(withIdentifier: initNavControllerIdentifier) as? UINavigationController
         self.navigate = Navigator(navigationController: self.navigationController)
     }
     

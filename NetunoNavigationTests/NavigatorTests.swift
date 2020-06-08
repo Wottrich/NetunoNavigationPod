@@ -18,7 +18,7 @@ class NavigatorTests: XCTestCase {
     
     override func setUp() {
         let storyboard = UIStoryboard(name: "ToAndGoStoryboard", bundle: nil)
-        let navigationController = storyboard.instantiateViewController(identifier: initNavigationControllerIdentifier) as? UINavigationController
+        let navigationController = storyboard.instantiateViewController(withIdentifier: initNavigationControllerIdentifier) as? UINavigationController
         self.navigate = Navigator(navigationController: navigationController)
     }
 

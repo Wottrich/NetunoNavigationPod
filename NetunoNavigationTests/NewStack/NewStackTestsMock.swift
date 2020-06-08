@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NetunoNavigation
 
 class NewStackTestsMock {
     
@@ -14,7 +15,7 @@ class NewStackTestsMock {
     var navigationController: UINavigationController?
     
     init(storyboard: UIStoryboard, navigationControllerIdentifier: String) {
-        self.navigationController = storyboard.instantiateViewController(identifier: navigationControllerIdentifier)
+        self.navigationController = storyboard.instantiateViewController(withIdentifier: navigationControllerIdentifier) as? UINavigationController
         self.navigate = Navigator(navigationController: self.navigationController)
     }
     
