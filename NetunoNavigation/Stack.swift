@@ -15,14 +15,19 @@ import UIKit
  */
 public class Stack {
     
+    //Internal
     var actualNavigationController: UINavigationController
-    var navigationController: UINavigationController
     var viewController: UIViewController?
     
-    private lazy var stackGo: StackGo = {
-        StackGo(actualNavigationController: self.actualNavigationController, navigationController: self.navigationController)
-    }()
+    //Public
+    public var navigationController: UINavigationController
     
+    private var stackGo: StackGo {
+        get {
+            return StackGo(actualNavigationController: self.actualNavigationController, navigationController: self.navigationController)
+        }
+    }
+
     init (actualNavigationController: UINavigationController, navigationController: UINavigationController) {
         self.actualNavigationController = actualNavigationController
         self.navigationController = navigationController
@@ -33,11 +38,8 @@ public class Stack {
         prepare: ((T?) -> Void)? = nil
     ) -> StackGo {
         
-        if let firstViewController = self.navigationController.viewControllers.first, let tType = firstViewController as? T {
-            
-            prepare?(tType)
-        
-            return stackGo
+        if let viewController = self.navigationController.viewControllers.first as? T {
+            prepare?(viewController)
         } else {
             viewController = T.storyboardInstance(currentViewController: self.navigationController) as? T
             prepare?(viewController as? T)
@@ -47,33 +49,28 @@ public class Stack {
                 self.navigationController.viewControllers.append(viewController)
             }
             
-            return stackGo
         }
         
+        return stackGo
     }
     
+    @discardableResult
     public func toGo<T: UIViewController> (
-        viewControllerToGo: T.Type? = nil,
-        modalPresentationStyle: UIModalPresentationStyle = .fullScreen,
-        animated: Bool = true,
-        completion: (() -> Void)? = nil
-    ) {
-        if viewControllerToGo == nil {
-            stackGo.go(animated: animated, completion)
-        } else if let firstViewController = self.navigationController.viewControllers.first, firstViewController is T {
-            stackGo.go(animated: animated, completion)
-        } else {
-            viewController = T.storyboardInstance(currentViewController: self.navigationController) as? T
-            
+        _ viewControllerToGo: T.Type? = nil,
+        style: ModalStyleEnum = .modal(modalTransitionStyle: .crossDissolve, modalPresentationStyle: .fullScreen, animated: true, completion: nil)
+    ) -> Stack {
+
+        if viewControllerToGo != nil && !(self.navigationController.viewControllers.first is T) {
+            self.viewController = T.storyboardInstance(currentViewController: self.navigationController) as? T
             if let viewController = self.viewController {
                 self.navigationController.viewControllers.removeAll()
                 self.navigationController.viewControllers.append(viewController)
             }
-            
-            stackGo.go(modalPresentationStyle: modalPresentationStyle,animated: animated, completion)
-            
         }
+            
+        stackGo.go(style)
         
+        return self
     }
     
 }
@@ -91,15 +88,12 @@ public class StackGo {
         self.navigationController = navigationController
     }
     
-    public func go (
-        modalPresentationStyle: UIModalPresentationStyle = .fullScreen,
-        animated: Bool = true,
-        _ completion: (() -> Void)? = nil
-    ) {
+    public func go (_ style: ModalStyleEnum = .none) {
         
-        self.navigationController.modalPresentationStyle = modalPresentationStyle
+        self.navigationController.modalPresentationStyle = style.modalPresentationStyle ?? .fullScreen
+        //self.navigationController.modalTransitionStyle = 
         
-        self.actualNavigationController.present(self.navigationController, animated: animated, completion: completion)
+        self.actualNavigationController.present(self.navigationController, animated: style.animated, completion: style.completion)
         
     }
     

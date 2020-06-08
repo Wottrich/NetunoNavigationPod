@@ -7,23 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ABAE7D5F24763588003C696D /* NetunoNavigationExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAE7D5E24763588003C696D /* NetunoNavigationExampleTests.swift */; };
+		ABAE7D68247639CE003C696D /* Start_TO_GO_SAME_StoryboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAE7D67247639CE003C696D /* Start_TO_GO_SAME_StoryboardViewController.swift */; };
+		ABAE7D6A24763A1D003C696D /* ToAndGoStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABAE7D6924763A1D003C696D /* ToAndGoStoryboard.storyboard */; };
+		ABAE7D6E247737FA003C696D /* NavigatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAE7D6D247737FA003C696D /* NavigatorMock.swift */; };
+		ABAE7D762478AEAD003C696D /* Start_TO_GO_ANOTHER_StoryboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAE7D752478AEAD003C696D /* Start_TO_GO_ANOTHER_StoryboardViewController.swift */; };
+		ABAE7D7A2478AFE0003C696D /* Finish_TO_GO_SAME_StoryboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAE7D792478AFE0003C696D /* Finish_TO_GO_SAME_StoryboardViewController.swift */; };
+		ABAE7D7C2478B09E003C696D /* ToAndGoAnotherStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABAE7D7B2478B09E003C696D /* ToAndGoAnotherStoryboard.storyboard */; };
+		ABAE7D812478BEA3003C696D /* Start_NEW_STACK_SAME_StoryboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAE7D802478BEA3003C696D /* Start_NEW_STACK_SAME_StoryboardViewController.swift */; };
 		ABB7F6F8244F68E700C22383 /* Navigator.h in Headers */ = {isa = PBXBuildFile; fileRef = ABB7F6F6244F68E700C22383 /* Navigator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ABB7F705244F69CE00C22383 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB7F704244F69CE00C22383 /* AppDelegate.swift */; };
 		ABB7F707244F69CE00C22383 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB7F706244F69CE00C22383 /* SceneDelegate.swift */; };
-		ABB7F709244F69CE00C22383 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB7F708244F69CE00C22383 /* ViewController.swift */; };
+		ABB7F709244F69CE00C22383 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB7F708244F69CE00C22383 /* BaseViewController.swift */; };
 		ABB7F70C244F69CE00C22383 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABB7F70A244F69CE00C22383 /* Main.storyboard */; };
 		ABB7F70E244F69D000C22383 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABB7F70D244F69D000C22383 /* Assets.xcassets */; };
 		ABB7F711244F69D000C22383 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABB7F70F244F69D000C22383 /* LaunchScreen.storyboard */; };
 		ABB7F71D244F70E500C22383 /* NavigatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB7F71C244F70E500C22383 /* NavigatorTests.swift */; };
 		ABB7F71F244F70E500C22383 /* NetunoNavigation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB7F6F3244F68E700C22383 /* NetunoNavigation.framework */; };
-		ABB7F728244FE36F00C22383 /* NavigatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB7F727244FE36F00C22383 /* NavigatorController.swift */; };
 		ABB7F72B244FE46D00C22383 /* Segue.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB7F72A244FE46D00C22383 /* Segue.swift */; };
 		ABB7F72D244FE48D00C22383 /* Go.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB7F72C244FE48D00C22383 /* Go.swift */; };
 		ABB7F72F244FE4BF00C22383 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB7F72E244FE4BF00C22383 /* Stack.swift */; };
 		ABB7F731244FE4EC00C22383 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB7F730244FE4EC00C22383 /* Navigator.swift */; };
+		ABEDF93E247A3C2D006C0BA3 /* Start_NEW_STACK_ANOTHER_StoryboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDF93D247A3C2D006C0BA3 /* Start_NEW_STACK_ANOTHER_StoryboardViewController.swift */; };
+		ABEDF941247A5077006C0BA3 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDF940247A5077006C0BA3 /* UINavigationControllerExtension.swift */; };
+		ABEDF943247A50B0006C0BA3 /* NavigatorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDF942247A50B0006C0BA3 /* NavigatorExtension.swift */; };
+		ABEDF945247A5104006C0BA3 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDF944247A5104006C0BA3 /* UIViewControllerExtension.swift */; };
+		ABEDF947247A5142006C0BA3 /* NavigatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDF946247A5142006C0BA3 /* NavigatorProtocol.swift */; };
+		ABEDF949247B5022006C0BA3 /* NavigatorDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDF948247B5022006C0BA3 /* NavigatorDefault.swift */; };
+		ABEDF94C247B5AF3006C0BA3 /* NavigatorToTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDF94B247B5AF3006C0BA3 /* NavigatorToTests.swift */; };
+		ABEDF94E247B5EDE006C0BA3 /* XCTestCaseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDF94D247B5EDE006C0BA3 /* XCTestCaseExtension.swift */; };
+		ABEDF951247B62B6006C0BA3 /* NavigatorToTestsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDF950247B62B6006C0BA3 /* NavigatorToTestsMock.swift */; };
+		ABEDF954247B63FC006C0BA3 /* NewStackSameStoryboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDF953247B63FC006C0BA3 /* NewStackSameStoryboardTests.swift */; };
+		ABEDF956247B69A0006C0BA3 /* NewStackAnotherStoryboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDF955247B69A0006C0BA3 /* NewStackAnotherStoryboardTests.swift */; };
+		ABEDF958247B6D6C006C0BA3 /* NewStackTestsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDF957247B6D6C006C0BA3 /* NewStackTestsMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		ABAE7D6124763588003C696D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ABB7F6EA244F68E700C22383 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ABB7F701244F69CE00C22383;
+			remoteInfo = NetunoNavigationExample;
+		};
 		ABB7F720244F70E500C22383 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = ABB7F6EA244F68E700C22383 /* Project object */;
@@ -41,13 +67,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ABAE7D5C24763588003C696D /* NetunoNavigationExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetunoNavigationExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABAE7D5E24763588003C696D /* NetunoNavigationExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetunoNavigationExampleTests.swift; sourceTree = "<group>"; };
+		ABAE7D6024763588003C696D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABAE7D67247639CE003C696D /* Start_TO_GO_SAME_StoryboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start_TO_GO_SAME_StoryboardViewController.swift; sourceTree = "<group>"; };
+		ABAE7D6924763A1D003C696D /* ToAndGoStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ToAndGoStoryboard.storyboard; sourceTree = "<group>"; };
+		ABAE7D6D247737FA003C696D /* NavigatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorMock.swift; sourceTree = "<group>"; };
+		ABAE7D752478AEAD003C696D /* Start_TO_GO_ANOTHER_StoryboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start_TO_GO_ANOTHER_StoryboardViewController.swift; sourceTree = "<group>"; };
+		ABAE7D792478AFE0003C696D /* Finish_TO_GO_SAME_StoryboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Finish_TO_GO_SAME_StoryboardViewController.swift; sourceTree = "<group>"; };
+		ABAE7D7B2478B09E003C696D /* ToAndGoAnotherStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ToAndGoAnotherStoryboard.storyboard; sourceTree = "<group>"; };
+		ABAE7D802478BEA3003C696D /* Start_NEW_STACK_SAME_StoryboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start_NEW_STACK_SAME_StoryboardViewController.swift; sourceTree = "<group>"; };
 		ABB7F6F3244F68E700C22383 /* NetunoNavigation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetunoNavigation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABB7F6F6244F68E700C22383 /* Navigator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Navigator.h; sourceTree = "<group>"; };
 		ABB7F6F7244F68E700C22383 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABB7F702244F69CE00C22383 /* NetunoNavigationExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetunoNavigationExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABB7F704244F69CE00C22383 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABB7F706244F69CE00C22383 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ABB7F708244F69CE00C22383 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ABB7F708244F69CE00C22383 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		ABB7F70B244F69CE00C22383 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ABB7F70D244F69D000C22383 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABB7F710244F69D000C22383 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,14 +91,32 @@
 		ABB7F71A244F70E500C22383 /* NetunoNavigationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetunoNavigationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABB7F71C244F70E500C22383 /* NavigatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorTests.swift; sourceTree = "<group>"; };
 		ABB7F71E244F70E500C22383 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ABB7F727244FE36F00C22383 /* NavigatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorController.swift; sourceTree = "<group>"; };
 		ABB7F72A244FE46D00C22383 /* Segue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segue.swift; sourceTree = "<group>"; };
 		ABB7F72C244FE48D00C22383 /* Go.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Go.swift; sourceTree = "<group>"; };
 		ABB7F72E244FE4BF00C22383 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		ABB7F730244FE4EC00C22383 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		ABEDF93D247A3C2D006C0BA3 /* Start_NEW_STACK_ANOTHER_StoryboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start_NEW_STACK_ANOTHER_StoryboardViewController.swift; sourceTree = "<group>"; };
+		ABEDF940247A5077006C0BA3 /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
+		ABEDF942247A50B0006C0BA3 /* NavigatorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorExtension.swift; sourceTree = "<group>"; };
+		ABEDF944247A5104006C0BA3 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		ABEDF946247A5142006C0BA3 /* NavigatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorProtocol.swift; sourceTree = "<group>"; };
+		ABEDF948247B5022006C0BA3 /* NavigatorDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorDefault.swift; sourceTree = "<group>"; };
+		ABEDF94B247B5AF3006C0BA3 /* NavigatorToTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorToTests.swift; sourceTree = "<group>"; };
+		ABEDF94D247B5EDE006C0BA3 /* XCTestCaseExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestCaseExtension.swift; sourceTree = "<group>"; };
+		ABEDF950247B62B6006C0BA3 /* NavigatorToTestsMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorToTestsMock.swift; sourceTree = "<group>"; };
+		ABEDF953247B63FC006C0BA3 /* NewStackSameStoryboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStackSameStoryboardTests.swift; sourceTree = "<group>"; };
+		ABEDF955247B69A0006C0BA3 /* NewStackAnotherStoryboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStackAnotherStoryboardTests.swift; sourceTree = "<group>"; };
+		ABEDF957247B6D6C006C0BA3 /* NewStackTestsMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStackTestsMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		ABAE7D5924763588003C696D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ABB7F6F0244F68E700C22383 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -88,12 +142,112 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ABAE7D5224762757003C696D /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				ABB7F712244F69D000C22383 /* Info.plist */,
+				ABB7F706244F69CE00C22383 /* SceneDelegate.swift */,
+				ABB7F704244F69CE00C22383 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		ABAE7D5324763102003C696D /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				ABB7F70A244F69CE00C22383 /* Main.storyboard */,
+				ABB7F70F244F69D000C22383 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		ABAE7D542476311C003C696D /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				ABB7F70D244F69D000C22383 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		ABAE7D552476312C003C696D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ABAE7D7F2478BE77003C696D /* newStack(...) */,
+				ABAE7D5724763208003C696D /* to(...).go(...) */,
+				ABAE7D562476314F003C696D /* General */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ABAE7D562476314F003C696D /* General */ = {
+			isa = PBXGroup;
+			children = (
+				ABB7F708244F69CE00C22383 /* BaseViewController.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		ABAE7D5724763208003C696D /* to(...).go(...) */ = {
+			isa = PBXGroup;
+			children = (
+				ABAE7D742478AE91003C696D /* AnotherStoryboard */,
+				ABAE7D67247639CE003C696D /* Start_TO_GO_SAME_StoryboardViewController.swift */,
+				ABAE7D792478AFE0003C696D /* Finish_TO_GO_SAME_StoryboardViewController.swift */,
+			);
+			path = "to(...).go(...)";
+			sourceTree = "<group>";
+		};
+		ABAE7D5D24763588003C696D /* NetunoNavigationExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				ABAE7D5E24763588003C696D /* NetunoNavigationExampleTests.swift */,
+				ABAE7D6024763588003C696D /* Info.plist */,
+			);
+			path = NetunoNavigationExampleTests;
+			sourceTree = "<group>";
+		};
+		ABAE7D742478AE91003C696D /* AnotherStoryboard */ = {
+			isa = PBXGroup;
+			children = (
+				ABAE7D752478AEAD003C696D /* Start_TO_GO_ANOTHER_StoryboardViewController.swift */,
+			);
+			path = AnotherStoryboard;
+			sourceTree = "<group>";
+		};
+		ABAE7D7D2478B0FE003C696D /* TestProject */ = {
+			isa = PBXGroup;
+			children = (
+				ABAE7D7E2478B119003C696D /* Storyboard */,
+				ABAE7D552476312C003C696D /* Views */,
+			);
+			path = TestProject;
+			sourceTree = "<group>";
+		};
+		ABAE7D7E2478B119003C696D /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				ABAE7D6924763A1D003C696D /* ToAndGoStoryboard.storyboard */,
+				ABAE7D7B2478B09E003C696D /* ToAndGoAnotherStoryboard.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		ABAE7D7F2478BE77003C696D /* newStack(...) */ = {
+			isa = PBXGroup;
+			children = (
+				ABEDF93C247A3C08006C0BA3 /* AnotherStoryboard */,
+				ABAE7D802478BEA3003C696D /* Start_NEW_STACK_SAME_StoryboardViewController.swift */,
+			);
+			path = "newStack(...)";
+			sourceTree = "<group>";
+		};
 		ABB7F6E9244F68E700C22383 = {
 			isa = PBXGroup;
 			children = (
 				ABB7F6F5244F68E700C22383 /* NetunoNavigation */,
 				ABB7F703244F69CE00C22383 /* NetunoNavigationExample */,
 				ABB7F71B244F70E500C22383 /* NetunoNavigationTests */,
+				ABAE7D5D24763588003C696D /* NetunoNavigationExampleTests */,
 				ABB7F6F4244F68E700C22383 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -104,6 +258,7 @@
 				ABB7F6F3244F68E700C22383 /* NetunoNavigation.framework */,
 				ABB7F702244F69CE00C22383 /* NetunoNavigationExample.app */,
 				ABB7F71A244F70E500C22383 /* NetunoNavigationTests.xctest */,
+				ABAE7D5C24763588003C696D /* NetunoNavigationExampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -111,8 +266,9 @@
 		ABB7F6F5244F68E700C22383 /* NetunoNavigation */ = {
 			isa = PBXGroup;
 			children = (
+				ABEDF94A247B5A59006C0BA3 /* Supporting Files */,
+				ABEDF93F247A5060006C0BA3 /* Extensions */,
 				ABB7F729244FE41E00C22383 /* Application */,
-				ABB7F727244FE36F00C22383 /* NavigatorController.swift */,
 				ABB7F72A244FE46D00C22383 /* Segue.swift */,
 				ABB7F72C244FE48D00C22383 /* Go.swift */,
 				ABB7F72E244FE4BF00C22383 /* Stack.swift */,
@@ -124,13 +280,10 @@
 		ABB7F703244F69CE00C22383 /* NetunoNavigationExample */ = {
 			isa = PBXGroup;
 			children = (
-				ABB7F704244F69CE00C22383 /* AppDelegate.swift */,
-				ABB7F706244F69CE00C22383 /* SceneDelegate.swift */,
-				ABB7F708244F69CE00C22383 /* ViewController.swift */,
-				ABB7F70A244F69CE00C22383 /* Main.storyboard */,
-				ABB7F70D244F69D000C22383 /* Assets.xcassets */,
-				ABB7F70F244F69D000C22383 /* LaunchScreen.storyboard */,
-				ABB7F712244F69D000C22383 /* Info.plist */,
+				ABAE7D7D2478B0FE003C696D /* TestProject */,
+				ABAE7D542476311C003C696D /* Resource */,
+				ABAE7D5324763102003C696D /* Storyboard */,
+				ABAE7D5224762757003C696D /* Application */,
 			);
 			path = NetunoNavigationExample;
 			sourceTree = "<group>";
@@ -138,8 +291,11 @@
 		ABB7F71B244F70E500C22383 /* NetunoNavigationTests */ = {
 			isa = PBXGroup;
 			children = (
+				ABEDF952247B634F006C0BA3 /* NewStack */,
+				ABEDF94F247B6261006C0BA3 /* To and ToGo */,
 				ABB7F71C244F70E500C22383 /* NavigatorTests.swift */,
 				ABB7F71E244F70E500C22383 /* Info.plist */,
+				ABEDF94D247B5EDE006C0BA3 /* XCTestCaseExtension.swift */,
 			);
 			path = NetunoNavigationTests;
 			sourceTree = "<group>";
@@ -151,6 +307,53 @@
 				ABB7F6F7244F68E700C22383 /* Info.plist */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		ABEDF93C247A3C08006C0BA3 /* AnotherStoryboard */ = {
+			isa = PBXGroup;
+			children = (
+				ABEDF93D247A3C2D006C0BA3 /* Start_NEW_STACK_ANOTHER_StoryboardViewController.swift */,
+			);
+			path = AnotherStoryboard;
+			sourceTree = "<group>";
+		};
+		ABEDF93F247A5060006C0BA3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ABEDF940247A5077006C0BA3 /* UINavigationControllerExtension.swift */,
+				ABEDF942247A50B0006C0BA3 /* NavigatorExtension.swift */,
+				ABEDF944247A5104006C0BA3 /* UIViewControllerExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		ABEDF94A247B5A59006C0BA3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ABAE7D6D247737FA003C696D /* NavigatorMock.swift */,
+				ABEDF946247A5142006C0BA3 /* NavigatorProtocol.swift */,
+				ABEDF948247B5022006C0BA3 /* NavigatorDefault.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ABEDF94F247B6261006C0BA3 /* To and ToGo */ = {
+			isa = PBXGroup;
+			children = (
+				ABEDF94B247B5AF3006C0BA3 /* NavigatorToTests.swift */,
+				ABEDF950247B62B6006C0BA3 /* NavigatorToTestsMock.swift */,
+			);
+			path = "To and ToGo";
+			sourceTree = "<group>";
+		};
+		ABEDF952247B634F006C0BA3 /* NewStack */ = {
+			isa = PBXGroup;
+			children = (
+				ABEDF953247B63FC006C0BA3 /* NewStackSameStoryboardTests.swift */,
+				ABEDF955247B69A0006C0BA3 /* NewStackAnotherStoryboardTests.swift */,
+				ABEDF957247B6D6C006C0BA3 /* NewStackTestsMock.swift */,
+			);
+			path = NewStack;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +370,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		ABAE7D5B24763588003C696D /* NetunoNavigationExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABAE7D6324763588003C696D /* Build configuration list for PBXNativeTarget "NetunoNavigationExampleTests" */;
+			buildPhases = (
+				ABAE7D5824763588003C696D /* Sources */,
+				ABAE7D5924763588003C696D /* Frameworks */,
+				ABAE7D5A24763588003C696D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ABAE7D6224763588003C696D /* PBXTargetDependency */,
+			);
+			name = NetunoNavigationExampleTests;
+			productName = NetunoNavigationExampleTests;
+			productReference = ABAE7D5C24763588003C696D /* NetunoNavigationExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		ABB7F6F2244F68E700C22383 /* NetunoNavigation */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ABB7F6FB244F68E700C22383 /* Build configuration list for PBXNativeTarget "NetunoNavigation" */;
@@ -231,6 +452,10 @@
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Wottrich Technology Company";
 				TargetAttributes = {
+					ABAE7D5B24763588003C696D = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = ABB7F701244F69CE00C22383;
+					};
 					ABB7F6F2244F68E700C22383 = {
 						CreatedOnToolsVersion = 11.3.1;
 						LastSwiftMigration = 1130;
@@ -260,11 +485,19 @@
 				ABB7F6F2244F68E700C22383 /* NetunoNavigation */,
 				ABB7F701244F69CE00C22383 /* NetunoNavigationExample */,
 				ABB7F719244F70E500C22383 /* NetunoNavigationTests */,
+				ABAE7D5B24763588003C696D /* NetunoNavigationExampleTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		ABAE7D5A24763588003C696D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ABB7F6F1244F68E700C22383 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -276,9 +509,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABAE7D6A24763A1D003C696D /* ToAndGoStoryboard.storyboard in Resources */,
 				ABB7F711244F69D000C22383 /* LaunchScreen.storyboard in Resources */,
 				ABB7F70E244F69D000C22383 /* Assets.xcassets in Resources */,
 				ABB7F70C244F69CE00C22383 /* Main.storyboard in Resources */,
+				ABAE7D7C2478B09E003C696D /* ToAndGoAnotherStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,15 +527,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		ABAE7D5824763588003C696D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABAE7D5F24763588003C696D /* NetunoNavigationExampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ABB7F6EF244F68E700C22383 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABEDF941247A5077006C0BA3 /* UINavigationControllerExtension.swift in Sources */,
+				ABEDF949247B5022006C0BA3 /* NavigatorDefault.swift in Sources */,
 				ABB7F72F244FE4BF00C22383 /* Stack.swift in Sources */,
+				ABEDF945247A5104006C0BA3 /* UIViewControllerExtension.swift in Sources */,
 				ABB7F731244FE4EC00C22383 /* Navigator.swift in Sources */,
-				ABB7F728244FE36F00C22383 /* NavigatorController.swift in Sources */,
+				ABEDF943247A50B0006C0BA3 /* NavigatorExtension.swift in Sources */,
+				ABAE7D6E247737FA003C696D /* NavigatorMock.swift in Sources */,
 				ABB7F72B244FE46D00C22383 /* Segue.swift in Sources */,
 				ABB7F72D244FE48D00C22383 /* Go.swift in Sources */,
+				ABEDF947247A5142006C0BA3 /* NavigatorProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,9 +556,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABB7F709244F69CE00C22383 /* ViewController.swift in Sources */,
+				ABAE7D762478AEAD003C696D /* Start_TO_GO_ANOTHER_StoryboardViewController.swift in Sources */,
+				ABB7F709244F69CE00C22383 /* BaseViewController.swift in Sources */,
+				ABAE7D68247639CE003C696D /* Start_TO_GO_SAME_StoryboardViewController.swift in Sources */,
 				ABB7F705244F69CE00C22383 /* AppDelegate.swift in Sources */,
+				ABEDF93E247A3C2D006C0BA3 /* Start_NEW_STACK_ANOTHER_StoryboardViewController.swift in Sources */,
 				ABB7F707244F69CE00C22383 /* SceneDelegate.swift in Sources */,
+				ABAE7D7A2478AFE0003C696D /* Finish_TO_GO_SAME_StoryboardViewController.swift in Sources */,
+				ABAE7D812478BEA3003C696D /* Start_NEW_STACK_SAME_StoryboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,13 +571,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABEDF954247B63FC006C0BA3 /* NewStackSameStoryboardTests.swift in Sources */,
+				ABEDF94E247B5EDE006C0BA3 /* XCTestCaseExtension.swift in Sources */,
+				ABEDF951247B62B6006C0BA3 /* NavigatorToTestsMock.swift in Sources */,
+				ABEDF956247B69A0006C0BA3 /* NewStackAnotherStoryboardTests.swift in Sources */,
 				ABB7F71D244F70E500C22383 /* NavigatorTests.swift in Sources */,
+				ABEDF94C247B5AF3006C0BA3 /* NavigatorToTests.swift in Sources */,
+				ABEDF958247B6D6C006C0BA3 /* NewStackTestsMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		ABAE7D6224763588003C696D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ABB7F701244F69CE00C22383 /* NetunoNavigationExample */;
+			targetProxy = ABAE7D6124763588003C696D /* PBXContainerItemProxy */;
+		};
 		ABB7F721244F70E500C22383 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = ABB7F6F2244F68E700C22383 /* NetunoNavigation */;
@@ -357,6 +621,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		ABAE7D6424763588003C696D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NetunoNavigationExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = github.io.wottrich.NetunoNavigationExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NetunoNavigationExample.app/NetunoNavigationExample";
+			};
+			name = Debug;
+		};
+		ABAE7D6524763588003C696D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NetunoNavigationExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = github.io.wottrich.NetunoNavigationExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NetunoNavigationExample.app/NetunoNavigationExample";
+			};
+			name = Release;
+		};
 		ABB7F6F9244F68E700C22383 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -531,7 +833,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NetunoNavigationExample/Info.plist;
+				INFOPLIST_FILE = NetunoNavigationExample/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -548,7 +850,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NetunoNavigationExample/Info.plist;
+				INFOPLIST_FILE = NetunoNavigationExample/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -564,6 +866,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NetunoNavigationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -583,6 +886,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NetunoNavigationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -601,6 +905,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		ABAE7D6324763588003C696D /* Build configuration list for PBXNativeTarget "NetunoNavigationExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABAE7D6424763588003C696D /* Debug */,
+				ABAE7D6524763588003C696D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		ABB7F6ED244F68E700C22383 /* Build configuration list for PBXProject "NetunoNavigation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

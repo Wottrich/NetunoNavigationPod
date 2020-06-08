@@ -12,40 +12,32 @@ import UIKit
  
  */
 /// - Tag: NavigateClass
-public class Navigator {
+public class Navigator: NavigatorProtocol {
     
-    static var identifierInitialNavigationController = ""
     
+    //Public
+    public var viewController: UIViewController?
     public var navigationController: UINavigationController?
-    
-    //When navigationController is not nil
-    public init (navigationController nav: UINavigationController?, rootViewController: UIViewController) {
-        if let navigationController = nav {
-            self.navigationController = navigationController
-        } else {
-            self.navigationController = NavigatorController(rootViewController: rootViewController)
+    public var `default`: NavigatorDefault {
+        get {
+            return NavigatorDefault(navigationController: self.navigationController)
         }
     }
     
     public init (navigationController nav: UINavigationController?) {
         self.navigationController = nav
     }
-        
-    private var viewController: UIViewController?
-    private var anotherNavigationController: UINavigationController?
     
     // MARK: - to()
-    public func to<T: UIViewController> (
+    public func to<T: UIViewController>(
         _ currentViewController: UIViewController,
-        viewControllerToGo: T.Type,
+        viewControllerToGo _: T.Type,
         prepare: ((T?) -> Void)? = nil
     ) -> Go {
-        
         viewController = T.storyboardInstance(currentViewController: currentViewController) as? T
         prepare?(viewController as? T)
         
         return Go(self.navigationController, viewController)
-        
     }
     
     public func to<T: UIViewController> (
@@ -53,175 +45,88 @@ public class Navigator {
         viewControllerToGo: T.Type,
         prepare: ((T?) -> Void)? = nil
     ) -> Go {
-        
         viewController = T.storyboardInstance(storyboardName: storyboardToGo) as? T
         prepare?(viewController as? T)
         
         return Go(self.navigationController, viewController)
-        
     }
     
     // MARK: - toGo()
+    @discardableResult
     public func toGo<T: UIViewController> (
         _ currentViewController: UIViewController,
         viewControllerToGo: T.Type,
         segue: Segue = .push(animated: Go.defaultAnimated)
-    ) {
-        
+    ) -> Bool {
         viewController = T.storyboardInstance(currentViewController: currentViewController) as? T
         
-        Go(
-            self.navigationController,
-            viewController
-        ).go(segue: segue)
-        
+        return Go(self.navigationController, viewController).go(segue: segue)
     }
     
+    @discardableResult
     public func toGo<T: UIViewController> (
         _ storyboardToGo: String,
         viewControllerToGo: T.Type,
         segue: Segue = .push(animated: Go.defaultAnimated)
-    ) {
-        
+    ) -> Bool {
         viewController = T.storyboardInstance(storyboardName: storyboardToGo) as? T
         
-        Go(
-            self.navigationController,
-            viewController
-        ).go(segue: segue)
-        
+        return Go(self.navigationController, viewController).go(segue: segue)
     }
     
     // MARK: - newStack()
     public func newStack (
-        _ navigationControllerToGo: String,
+        navControllerToGo: String,
         _ storyboardToGo: String? = nil
     ) -> Stack? {
         
+        guard let actualNavController = self.navigationController else {return nil}
+        
         if let storyboardName = storyboardToGo {
             
-            guard let newNavigationController = UINavigationController.instantiate(identifier: navigationControllerToGo, storyboard: storyboardName)
-                as? UINavigationController else {return nil}
+            let instantiateViewController = UINavigationController.instantiate(identifier: navControllerToGo, storyboard: storyboardName)
+            guard let newNavigationController = instantiateViewController as? UINavigationController else {return nil}
             
-            if let actualNavController = self.navigationController {
-                return Stack(actualNavigationController: actualNavController, navigationController: newNavigationController)
-            } else {
-                return nil
-            }
+            return Stack(actualNavigationController: actualNavController, navigationController: newNavigationController)
             
         } else {
             
-            guard let newNavigationController = UINavigationController.instantiate(identifier: navigationControllerToGo, storyboard: self.navigationController?.storyboard)
-                as? UINavigationController else {return nil}
+            guard let storyboard = actualNavController.storyboard else {return nil}
+            let instantiateViewController = UINavigationController.instantiate(identifier: navControllerToGo, storyboard: storyboard)
+            guard let newNavigationController = instantiateViewController as? UINavigationController else {return nil}
             
-            if let actualNavController = self.navigationController {
-                return Stack(actualNavigationController: actualNavController, navigationController: newNavigationController)
-            } else {
-                return nil
-            }
+            return Stack(actualNavigationController: actualNavController, navigationController: newNavigationController)
             
         }
         
     }
     
     public func newStackToGo<T: UIViewController> (
-        _ navigationControllerToGo: String,
+        _ navControllerToGo: String,
         _ storyboardToGo: String? = nil,
         viewControllerToGo: T.Type? = nil,
-        modalPresentationStyle: UIModalPresentationStyle = .fullScreen,
-        animated: Bool = false,
-        _ completion: (() -> Void)? = nil
-    ) {
+        style: ModalStyleEnum = .none
+    ) -> Stack? {
+        
+        guard let actualNavController = self.navigationController else {return nil}
         
         if let storyboardName = storyboardToGo {
             
-            guard let newNavigationController = UINavigationController.instantiate(identifier: navigationControllerToGo, storyboard: storyboardName)
-                as? UINavigationController else {return}
+            let instantiateViewController = UINavigationController.instantiate(identifier: navControllerToGo, storyboard: storyboardName)
+            guard let newNavigationController = instantiateViewController as? UINavigationController else {return nil}
             
-            if let actualNavController = self.navigationController {
-                
-                Stack(actualNavigationController: actualNavController, navigationController: newNavigationController)
-                    .toGo(viewControllerToGo: viewControllerToGo, modalPresentationStyle: modalPresentationStyle, animated: animated, completion: completion)
-                
-            }
+            let stack = Stack(actualNavigationController: actualNavController, navigationController: newNavigationController)
+            return stack.toGo(viewControllerToGo, style: style)
             
         } else {
             
-            guard let newNavigationController = UINavigationController.instantiate(identifier: navigationControllerToGo, storyboard: self.navigationController?.storyboard)
-                as? UINavigationController else {return}
+            let instantiateViewController = UINavigationController.instantiate(identifier: navControllerToGo, storyboard: self.navigationController?.storyboard)
+            guard let newNavigationController = instantiateViewController as? UINavigationController else {return nil}
             
-            if let actualNavController = self.navigationController {
-                
-                Stack(actualNavigationController: actualNavController, navigationController: newNavigationController)
-                    .toGo(viewControllerToGo: viewControllerToGo, modalPresentationStyle: modalPresentationStyle, animated: animated, completion: completion)
-                
-            }
-        }
-    }
-    
-    // MARK: - popViewController ()
-    
-    public func popViewController (animated: Bool = true) {
-        self.navigationController?.popViewController(animated: animated)
-    }
-    
-    public func popToRootViewController (animated: Bool = true) {
-        self.navigationController?.popToRootViewController(animated: animated)
-    }
-    
-    public func hasViewControllerInStack<T: UIViewController> (viewController: T.Type) -> Bool {
-        if let nav = self.navigationController {
-            return !nav.viewControllers.filter({$0 is T}).isEmpty
+            let stack = Stack(actualNavigationController: actualNavController, navigationController: newNavigationController)
+            return stack.toGo(viewControllerToGo, style: style)
+            
         }
         
-        return false
-        
     }
-    
-    public func popToViewController<T: UIViewController> (viewControllerToPop: T.Type) {
-        self.navigationController?.popToViewController(viewController: viewControllerToPop)
-    }
-}
-
-extension UINavigationController {
-    
-    public func popToViewController<T: UIViewController>(viewController: T.Type) {
-        var viewControllerToPop: UIViewController?
-        for controller in self.viewControllers {
-            if controller.isKind(of: T.self) {
-                viewControllerToPop = controller
-                break
-            }
-        }
-        if let controller = viewControllerToPop {
-            self.popToViewController(controller, animated: true)
-        }
-    }
-    
-}
-
-extension UIViewController {
-    
-    class var identifier: String {
-        return String(describing: self)
-    }
-    
-    public class func storyboardInstance(storyboardName: String) -> UIViewController {
-        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
-        return storyboard.instantiateViewController(withIdentifier: identifier)
-    }
-    
-    public class func storyboardInstance(currentViewController: UIViewController) -> UIViewController? {
-        return currentViewController.storyboard?.instantiateViewController(withIdentifier: identifier)
-    }
-    
-    class func instantiate(identifier: String, storyboard: String) -> UIViewController {
-        let storyboard = UIStoryboard(name: storyboard, bundle: nil)
-        return storyboard.instantiateViewController(withIdentifier: identifier)
-    }
-    
-    class func instantiate (identifier: String, storyboard: UIStoryboard?) -> UIViewController? {
-        return storyboard?.instantiateViewController(withIdentifier: identifier)
-    }
-    
 }

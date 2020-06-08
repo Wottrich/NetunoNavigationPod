@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import NetunoNavigation
 
-class ViewController: UIViewController {
+class BaseViewController: UIViewController {
 
+    var navigate: Navigator!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.navigate = Navigator(navigationController: self.navigationController)
     }
 
 
