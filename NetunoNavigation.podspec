@@ -6,13 +6,13 @@ Pod::Spec.new do |spec|
 
 
   spec.name         = "NetunoNavigation"
-  spec.version      = "0.0.6"
-  spec.summary      = "Navigate as a God"
+  spec.version      = "1.0.0"
+  spec.summary      = "Navigate like a God"
 
   # ―――  Description  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
   spec.description  = <<-DESC
-A POD to make easily how to navigate on iOS
+NetunoNavigation is a pod to iOS to take navigation to the next level on the platform.
                    DESC
 
   # ―――  HomePage  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
