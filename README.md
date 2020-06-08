@@ -17,7 +17,7 @@ Navigate like a god.
 You can install NetunoNavigation with [CocoaPods](http://cocoapods.org/).
 
 ```ruby
-pod 'NetunoNavigation', '~> 0.0.5'
+pod 'NetunoNavigation', '~> 1.0.0'
 ```
 
 ## Implementing
