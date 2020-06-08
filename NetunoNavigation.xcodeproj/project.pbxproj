@@ -10,7 +10,6 @@
 		ABAE7D5F24763588003C696D /* NetunoNavigationExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAE7D5E24763588003C696D /* NetunoNavigationExampleTests.swift */; };
 		ABAE7D68247639CE003C696D /* Start_TO_GO_SAME_StoryboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAE7D67247639CE003C696D /* Start_TO_GO_SAME_StoryboardViewController.swift */; };
 		ABAE7D6A24763A1D003C696D /* ToAndGoStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABAE7D6924763A1D003C696D /* ToAndGoStoryboard.storyboard */; };
-		ABAE7D6E247737FA003C696D /* NavigatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAE7D6D247737FA003C696D /* NavigatorMock.swift */; };
 		ABAE7D762478AEAD003C696D /* Start_TO_GO_ANOTHER_StoryboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAE7D752478AEAD003C696D /* Start_TO_GO_ANOTHER_StoryboardViewController.swift */; };
 		ABAE7D7A2478AFE0003C696D /* Finish_TO_GO_SAME_StoryboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAE7D792478AFE0003C696D /* Finish_TO_GO_SAME_StoryboardViewController.swift */; };
 		ABAE7D7C2478B09E003C696D /* ToAndGoAnotherStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABAE7D7B2478B09E003C696D /* ToAndGoAnotherStoryboard.storyboard */; };
@@ -72,7 +71,6 @@
 		ABAE7D6024763588003C696D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABAE7D67247639CE003C696D /* Start_TO_GO_SAME_StoryboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start_TO_GO_SAME_StoryboardViewController.swift; sourceTree = "<group>"; };
 		ABAE7D6924763A1D003C696D /* ToAndGoStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ToAndGoStoryboard.storyboard; sourceTree = "<group>"; };
-		ABAE7D6D247737FA003C696D /* NavigatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorMock.swift; sourceTree = "<group>"; };
 		ABAE7D752478AEAD003C696D /* Start_TO_GO_ANOTHER_StoryboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start_TO_GO_ANOTHER_StoryboardViewController.swift; sourceTree = "<group>"; };
 		ABAE7D792478AFE0003C696D /* Finish_TO_GO_SAME_StoryboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Finish_TO_GO_SAME_StoryboardViewController.swift; sourceTree = "<group>"; };
 		ABAE7D7B2478B09E003C696D /* ToAndGoAnotherStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ToAndGoAnotherStoryboard.storyboard; sourceTree = "<group>"; };
@@ -330,7 +328,6 @@
 		ABEDF94A247B5A59006C0BA3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				ABAE7D6D247737FA003C696D /* NavigatorMock.swift */,
 				ABEDF946247A5142006C0BA3 /* NavigatorProtocol.swift */,
 				ABEDF948247B5022006C0BA3 /* NavigatorDefault.swift */,
 			);
@@ -545,7 +542,6 @@
 				ABEDF945247A5104006C0BA3 /* UIViewControllerExtension.swift in Sources */,
 				ABB7F731244FE4EC00C22383 /* Navigator.swift in Sources */,
 				ABEDF943247A50B0006C0BA3 /* NavigatorExtension.swift in Sources */,
-				ABAE7D6E247737FA003C696D /* NavigatorMock.swift in Sources */,
 				ABB7F72B244FE46D00C22383 /* Segue.swift in Sources */,
 				ABB7F72D244FE48D00C22383 /* Go.swift in Sources */,
 				ABEDF947247A5142006C0BA3 /* NavigatorProtocol.swift in Sources */,
