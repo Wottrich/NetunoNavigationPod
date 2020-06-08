@@ -275,7 +275,7 @@ navigate.newStackToGo(
 
 </details>
 
-## Wiki
+## [Wiki](https://github.com/Wottrich/NetunoNavigationPod/wiki)
 * [Navigator](https://github.com/Wottrich/NetunoNavigationPod/wiki/Navigator)
 	* [.To(...)](https://github.com/Wottrich/NetunoNavigationPod/wiki/.to)
 	* [.ToGo(...)](https://github.com/Wottrich/NetunoNavigationPod/wiki/.toGo)
