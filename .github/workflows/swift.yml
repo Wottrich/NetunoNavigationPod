@@ -3,8 +3,8 @@ name: Swift
 on:
   push:
     branches: 
-      - master
       - feature/*
+      - master
   pull_request:
     branches:
       - master
