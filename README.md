@@ -7,6 +7,9 @@
 ![platform](https://img.shields.io/badge/platform-iOS-blue.svg)
 [![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/wottrich/NetunoNavigationPod)
 
+Job:
+![Swift](https://github.com/Wottrich/NetunoNavigationPod/workflows/Swift/badge.svg?branch=master)
+
 # 🔱 NetunoNavigation 🔱
 Navigate like a god.
 
