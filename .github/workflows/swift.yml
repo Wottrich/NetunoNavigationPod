@@ -1,0 +1,23 @@
+name: Swift
+
+on:
+  push:
+    branches: 
+      - master
+      - feature/*
+  pull_request:
+    branches:
+      - master
+      - feature/*
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build
+      run: swift build -v
+    - name: Run tests
+      run: swift test -v
