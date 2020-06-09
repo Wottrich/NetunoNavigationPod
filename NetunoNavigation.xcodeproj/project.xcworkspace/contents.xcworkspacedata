@@ -2,6 +2,37 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/wottrich/Desktop/Gits/iOS/pod/Navigator/NetunoNavigation.xcodeproj">
+      location = "group:../Package.swift">
+   </FileRef>
+   <Group
+      location = "group:../Tests"
+      name = "Tests">
+      <FileRef
+         location = "group:LinuxMain.swift">
+      </FileRef>
+      <Group
+         location = "group:NavigatorTests"
+         name = "NavigatorTests">
+         <FileRef
+            location = "group:XCTestManifests.swift">
+         </FileRef>
+         <FileRef
+            location = "group:NavigatorTests.swift">
+         </FileRef>
+      </Group>
+   </Group>
+   <Group
+      location = "group:../Sources"
+      name = "Sources">
+      <Group
+         location = "group:Navigator"
+         name = "Navigator">
+         <FileRef
+            location = "group:Navigator.swift">
+         </FileRef>
+      </Group>
+   </Group>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>
