@@ -32,19 +32,19 @@ class NavigatorToTests: XCTestCase {
     }
 
     func test_ToAndGo_ReturnTrue () {
-        let to = self.sut.navigate.to(sut.currentViewController!, viewControllerToGo: Finish_TO_GO_SAME_StoryboardViewController.self)
-        XCTAssertEqual(true, to.go(), ".go() should be true")
+        let to = self.sut.navigate?.to(sut.currentViewController!, viewControllerToGo: Finish_TO_GO_SAME_StoryboardViewController.self)
+        XCTAssertEqual(true, to?.go(), ".go() should be true")
     }
     
     func test_ToAndGo_ReturnFalse () {
         let viewController = UIViewController()//ViewController without storyboard
-        let to = self.sut.navigate.to(viewController, viewControllerToGo: Finish_TO_GO_SAME_StoryboardViewController.self)
-        XCTAssertEqual(false, to.go(), ".go() should not be true")
+        let to = self.sut.navigate?.to(viewController, viewControllerToGo: Finish_TO_GO_SAME_StoryboardViewController.self)
+        XCTAssertEqual(false, to?.go(), ".go() should not be true")
     }
     
     func test_ToPrepareAndGo () {
         
-        self.sut.navigate.to(sut.currentViewController!, viewControllerToGo: Finish_TO_GO_SAME_StoryboardViewController.self) {
+        self.sut.navigate?.to(sut.currentViewController!, viewControllerToGo: Finish_TO_GO_SAME_StoryboardViewController.self) {
             XCTAssertEqual(false, $0?.receivedData, "Received Data should be false before .go(...)")
             $0?.receivedData = true
         }.go()
@@ -58,12 +58,12 @@ class NavigatorToTests: XCTestCase {
     }
     
     func test_ToAndGo_ReturnTrue_AnotherStoryboard () {
-        let to = self.sut.navigate.to(anotherStoryboard, viewControllerToGo: Start_TO_GO_ANOTHER_StoryboardViewController.self)
-        XCTAssertEqual(true, to.go(), ".go() should be true")
+        let to = self.sut.navigate?.to(anotherStoryboard, viewControllerToGo: Start_TO_GO_ANOTHER_StoryboardViewController.self)
+        XCTAssertEqual(true, to?.go(), ".go() should be true")
     }
     
     func test_ToPrepareAndGo_AnotherStoryboard () {
-        self.sut.navigate.to(anotherStoryboard, viewControllerToGo: Start_TO_GO_ANOTHER_StoryboardViewController.self) {
+        self.sut.navigate?.to(anotherStoryboard, viewControllerToGo: Start_TO_GO_ANOTHER_StoryboardViewController.self) {
             XCTAssertEqual(false, $0?.receivedData)
             $0?.receivedData = true
         }.go()
@@ -76,18 +76,18 @@ class NavigatorToTests: XCTestCase {
     }
     
     func test_ToGo_NotNil () {
-        XCTAssertNotNil(self.sut.navigate.toGo(sut.currentViewController!, viewControllerToGo: Finish_TO_GO_SAME_StoryboardViewController.self))
+        XCTAssertNotNil(self.sut.navigate?.toGo(sut.currentViewController!, viewControllerToGo: Finish_TO_GO_SAME_StoryboardViewController.self))
     }
     
     func test_ToGo () {
-        self.sut.navigate.toGo(sut.currentViewController!, viewControllerToGo: Finish_TO_GO_SAME_StoryboardViewController.self)
+        self.sut.navigate?.toGo(sut.currentViewController!, viewControllerToGo: Finish_TO_GO_SAME_StoryboardViewController.self)
         
         _ = myEspectation({ $0 is Finish_TO_GO_SAME_StoryboardViewController }, sut.navigationController)
         waitForExpectations(timeout: 5)
     }
     
     func test_ToGo_AnotherStoryboard () {
-        self.sut.navigate.toGo(anotherStoryboard, viewControllerToGo: Start_TO_GO_ANOTHER_StoryboardViewController.self)
+        self.sut.navigate?.toGo(anotherStoryboard, viewControllerToGo: Start_TO_GO_ANOTHER_StoryboardViewController.self)
         
         _ = myEspectation({ $0 is Start_TO_GO_ANOTHER_StoryboardViewController }, sut.navigationController)
         waitForExpectations(timeout: 5)

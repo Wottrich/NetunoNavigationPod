@@ -10,7 +10,7 @@ import UIKit
 
 extension UIViewController {
     
-    class var identifier: String {
+    public class var identifier: String {
         return String(describing: self)
     }
     

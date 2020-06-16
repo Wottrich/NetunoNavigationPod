@@ -11,11 +11,11 @@ import NetunoNavigation
 
 class BaseViewController: UIViewController {
 
-    var navigate: Navigator!
+    var navigate: Navigator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigate = Navigator(navigationController: self.navigationController)
+        self.navigate = try? Navigator(navigationController: self.navigationController)
     }
 
 

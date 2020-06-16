@@ -24,8 +24,22 @@ public class Navigator: NavigatorProtocol {
         }
     }
     
-    public init (navigationController nav: UINavigationController?) {
+    var stackFlowInternal: StackFlow
+    
+    public var stackFlow: StackFlow {
+        get {
+            return stackFlowInternal
+        }
+    }
+    
+    public init (navigationController nav: UINavigationController?) throws {
         self.navigationController = nav
+        
+        do {
+            stackFlowInternal = try StackFlow(navigationController: nav)
+        } catch let error {
+            throw error
+        }
     }
     
     // MARK: - to()

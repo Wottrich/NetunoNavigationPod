@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB0EF20524984DED008B2DFD /* StackFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0EF20424984DED008B2DFD /* StackFlow.swift */; };
+		AB0EF208249856C9008B2DFD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0EF207249856C9008B2DFD /* MainViewController.swift */; };
 		ABAE7D5F24763588003C696D /* NetunoNavigationExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAE7D5E24763588003C696D /* NetunoNavigationExampleTests.swift */; };
 		ABAE7D68247639CE003C696D /* Start_TO_GO_SAME_StoryboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAE7D67247639CE003C696D /* Start_TO_GO_SAME_StoryboardViewController.swift */; };
 		ABAE7D6A24763A1D003C696D /* ToAndGoStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABAE7D6924763A1D003C696D /* ToAndGoStoryboard.storyboard */; };
@@ -66,6 +68,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB0EF20424984DED008B2DFD /* StackFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackFlow.swift; sourceTree = "<group>"; };
+		AB0EF207249856C9008B2DFD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		ABAE7D5C24763588003C696D /* NetunoNavigationExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetunoNavigationExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABAE7D5E24763588003C696D /* NetunoNavigationExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetunoNavigationExampleTests.swift; sourceTree = "<group>"; };
 		ABAE7D6024763588003C696D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -140,6 +144,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB0EF20324984DB7008B2DFD /* Stack Flow */ = {
+			isa = PBXGroup;
+			children = (
+				AB0EF20424984DED008B2DFD /* StackFlow.swift */,
+			);
+			path = "Stack Flow";
+			sourceTree = "<group>";
+		};
+		AB0EF206249856B8008B2DFD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AB0EF207249856C9008B2DFD /* MainViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		ABAE7D5224762757003C696D /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +284,7 @@
 		ABB7F6F5244F68E700C22383 /* NetunoNavigation */ = {
 			isa = PBXGroup;
 			children = (
+				AB0EF20324984DB7008B2DFD /* Stack Flow */,
 				ABEDF94A247B5A59006C0BA3 /* Supporting Files */,
 				ABEDF93F247A5060006C0BA3 /* Extensions */,
 				ABB7F729244FE41E00C22383 /* Application */,
@@ -278,6 +299,7 @@
 		ABB7F703244F69CE00C22383 /* NetunoNavigationExample */ = {
 			isa = PBXGroup;
 			children = (
+				AB0EF206249856B8008B2DFD /* Views */,
 				ABAE7D7D2478B0FE003C696D /* TestProject */,
 				ABAE7D542476311C003C696D /* Resource */,
 				ABAE7D5324763102003C696D /* Storyboard */,
@@ -542,6 +564,7 @@
 				ABEDF945247A5104006C0BA3 /* UIViewControllerExtension.swift in Sources */,
 				ABB7F731244FE4EC00C22383 /* Navigator.swift in Sources */,
 				ABEDF943247A50B0006C0BA3 /* NavigatorExtension.swift in Sources */,
+				AB0EF20524984DED008B2DFD /* StackFlow.swift in Sources */,
 				ABB7F72B244FE46D00C22383 /* Segue.swift in Sources */,
 				ABB7F72D244FE48D00C22383 /* Go.swift in Sources */,
 				ABEDF947247A5142006C0BA3 /* NavigatorProtocol.swift in Sources */,
@@ -558,6 +581,7 @@
 				ABB7F705244F69CE00C22383 /* AppDelegate.swift in Sources */,
 				ABEDF93E247A3C2D006C0BA3 /* Start_NEW_STACK_ANOTHER_StoryboardViewController.swift in Sources */,
 				ABB7F707244F69CE00C22383 /* SceneDelegate.swift in Sources */,
+				AB0EF208249856C9008B2DFD /* MainViewController.swift in Sources */,
 				ABAE7D7A2478AFE0003C696D /* Finish_TO_GO_SAME_StoryboardViewController.swift in Sources */,
 				ABAE7D812478BEA3003C696D /* Start_NEW_STACK_SAME_StoryboardViewController.swift in Sources */,
 			);

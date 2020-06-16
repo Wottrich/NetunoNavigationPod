@@ -11,7 +11,7 @@ import UIKit
 
 class NavigatorToTestsMock {
     
-    var navigate: Navigator
+    var navigate: Navigator?
     var navigationController: UINavigationController?
     var currentViewController: UIViewController? {
         get {
@@ -21,7 +21,7 @@ class NavigatorToTestsMock {
     
     init(storyboard: UIStoryboard, initNavControllerIdentifier: String) {
         self.navigationController = storyboard.instantiateViewController(withIdentifier: initNavControllerIdentifier) as? UINavigationController
-        self.navigate = Navigator(navigationController: self.navigationController)
+        self.navigate = try? Navigator(navigationController: self.navigationController)
     }
     
 }
